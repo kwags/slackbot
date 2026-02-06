@@ -27,6 +27,15 @@ def handle_mention(body, say):
     
     say(text=f"Hello <@{user}>! Processing your Question:  {text}", thread_ts=thread_ts)
 
+@app.event("message")
+def handle_messages(body, say):
+    event = body.get("event", {})
+    user = event.get("user")
+    text = event.get("text")
+    if not event.get("channel_type") == "im":
+        return
+    say(f"Hello <@{user}>! Processing question: {text}")
+
 if __name__ == "__main__":
     handler = SocketModeHandler(app, app_token)
     handler.start()
