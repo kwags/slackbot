@@ -18,7 +18,7 @@ if not bot_token or not app_token:
 
 app = App(token=bot_token)
 
-@app.event("mention")
+@app.event("app_mention")
 def handle_mention(body, say):
     event = body.get("event", {})
     thread_ts = event.get("thread_ts", event["ts"])
