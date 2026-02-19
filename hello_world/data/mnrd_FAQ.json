@@ -1,0 +1,349 @@
+[
+  {
+    "id": "1",
+    "question": "Where can I find the family and friends discount ticket link?",
+    "answer": "The friends and family discount link is located on the Ticket Quick Info document located here: https://docs.google.com/document/d/1kErUuSZYr5XW0lo9VFSvvjhMnyC2W3gDDM0bdkb1rXg/edit?tab=t.0",
+    "keywords": "ticket discount, ticket link, friends and family ticket",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "2",
+    "question": "How do I submit a leave of absence (LOA) or status change form?",
+    "answer": "To submit a leave of absence, you can fill out a status change form located here: https://mnrd.me/loa",
+    "keywords": "LOA form, leave of absence, status change, submit LOA",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "3",
+    "question": "How do I file or submit a grievance?",
+    "answer": "You can file a grievance by filling out the following form located here: https://docs.google.com/forms/d/e/1FAIpQLScRKYA1pv6ovsXFA4PE--TpUo6uiqzU0vDaNhD7KjbNFUOreQ/viewform",
+    "keywords": "file a complaint, submit a grievance, grievance form, file grievance",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "4",
+    "question": "How do I submit or find the dues waiver form?",
+    "answer": "To submit a dues waiver click here: https://docs.google.com/forms/d/e/1FAIpQLSfypKUm1eqApE4TaJNHVNw08u1F7r_IJ55znnRJOPl2gNfWfg/viewform.",
+    "keywords": "dues waiver, fee waiver, submit dues waiver",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "5",
+    "question": "How do I find and apply for open league jobs?",
+    "answer": "You can email HR@mnrollerderby.com\n to connect with the jobs manager to sign up for an open position. To see available positions, check the jobs spreadsheet here: https://docs.google.com/spreadsheets/d/1TXl06s7IUALyyp_PWVAhOhHLZTVPkI_QNRhoL2qKsXI/edit?gid=0#gid=0.",
+    "keywords": "apply leauge job, open league positions, contact jobs manager",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "6",
+    "question": "Where can I find the MNRD org chart and leadership information?",
+    "answer": "The org chart is located here: https://mnrg.me/org_charter/",
+    "keywords": "org chart, leadership info, organizational chart",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "7",
+    "question": "Who are the current Board of Directors (BoD) members?",
+    "answer": "Members of the current Board of Directors can be located on our org chart. The org chart can be located here: https://mnrg.me/org_charter/",
+    "keywords": "board of directors, bod members, current board",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "8",
+    "question": "Who is the current Safety Director?",
+    "answer": "The current safety director can be located on the MNRD org chart. The org chart is located here: https://mnrg.me/org_charter/",
+    "keywords": "safety director, current safety director",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "9",
+    "question": "Where do I submit my attendence?",
+    "answer": "MNRD S22 Attendance Tracking",
+    "keywords": "submit attendance, attendance tracking, attendance form",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "10",
+    "question": "Who are my team captains?",
+    "answer": "Team captains are listed in the MNRD org chart. The org chart is locted here: https://mnrg.me/org_charter/",
+    "keywords": "captains, team captains, current captains",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "11",
+    "question": "Where can I find the link to bout footage?",
+    "answer": "A link to bout footage is typically poste in groups.io following the event. Alternately footage is typically also posted in the #footage channel in Slack.",
+    "keywords": "bout footage, footage channel, footage link",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "12",
+    "question": "Where is the current liability waiver located?",
+    "answer": "The current liability waiver is located in groups.io. This is located under files in the \"Current Articles, Bylaws and Misc Policies\" file.",
+    "keywords": "liability waiver, current waiver, waiver document",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "13",
+    "question": "What is the membership policy?",
+    "answer": "The membership policy is located in groups.io in the files section. Here is a direct link to the policy: https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Membership%20Policy%20%28updated%206October2025%29.pdf",
+    "keywords": "membership policy, MNRD membership, membership guidelines",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "14",
+    "question": "Where can I find the game or bout schedule?",
+    "answer": "MNRD's game scheudule can be located on the MNRD website under the sections \"Events & Tickets.\" To go directly to this page you can click here: https://www.mnrollerderby.com/events-tickets/. ",
+    "keywords": "game scheudle, bout schedule, events schedule",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "15",
+    "question": "How do I update my name in the roster?",
+    "answer": "You can do that by filling out the roster form located here: https://docs.google.com/forms/d/e/1FAIpQLSc59rhHm_kjCJrQhtlFr83StrJOFRlS7NLNCEClVd5-rLlZcg/viewform?usp=send_form",
+    "keywords": "update roster, edit roster, change name roster",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "16",
+    "question": "How do I update my pay pal email?",
+    "answer": "Directions to upate your paypal email can be located on your website here: https://www.paypal.com/us/cshelp/article/how-do-i-add-remove-or-update-an-email-address-on-my-paypal-account-help135.",
+    "keywords": "update PayPal, PayPal email, change PayPal",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "17",
+    "question": "What is my WFTDA insurance number?",
+    "answer": "You can find and verify your WFTDA insurance here: https://wftda.ps.membersuite.com/custom/InsuranceVerification.aspx.",
+    "keywords": "WFTDA insurance, insurance number, verify insurance",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "18",
+    "question": "How do I renew my WFTDA insurance?",
+    "answer": "WFTDA Membership but be renewed annually. To renew your insurance, go to your WFTDA portal and on this page there is an option to click to renew your WFTDA insurance. Alternatively, you can use this link here to go directly to that page: https://wftda.ps.membersuite.com/membership/PurchaseMembership1.aspx?contextID=0bb62e40-0068-ce57-9cd4-0b3e5e7ccf9f&",
+    "keywords": "renew WFTDA insurance, insurance renewal",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "19",
+    "question": "Where can I locate MNRD policies?",
+    "answer": "MNRD Policies are located in Groups.io. When you are in the main MNRD groups.io if you click on the menu, they are located under documents, and then under \"admin.\" A direct link to polcieis in groups.io is located here: https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "20",
+    "question": "Where is the MNRD bout schedule located?",
+    "answer": "The MNRD bout schedule is located on the MNRD website under the section events and tickets: https://www.mnrollerderby.com/events-tickets/",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "21",
+    "question": "How do I retire from MNRD?",
+    "answer": "To retire from MNRD you can fill out the status change form located here: https://docs.google.com/forms/d/e/1FAIpQLSc0CntEeGwWvF3uR3_pf9o3HXIprsx5yL-FNw-30ssr85v3lg/viewform.",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "22",
+    "question": "What kind of gear do I need to get for Roller Derby?",
+    "answer": "Gear Megadoc - Google Docs",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "23",
+    "question": "Where do I report safety concerns?",
+    "answer": "Safety Reporting Form",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "24",
+    "question": "Where do I find people to carpool with in MNRD?",
+    "answer": "There is a channel named #carpools intended to support folks in creating local carpools.",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "25",
+    "question": "How can I help my league sell tickets?",
+    "answer": "There are several ways the league promotes bouts to sell tickets. Some examples include tabling at events, flyering, or inviting people to the bout day facebook event page directly. To be connected more easily to bout promotion efforts, you can join the #buttsinseats channel on Slack.",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "26",
+    "question": "Where can I sign up to volunteer at events promoting MNRD?",
+    "answer": "An events sign-up spreadsheet, where you can sign up to participate in planned events, is located here: https://docs.google.com/spreadsheets/d/10JIz_kzZqWT1d9B9AOS2akpwxjdRsStestdwpU8NeSI/edit?gid=2139456876#gid=2139456876",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "27",
+    "question": "Who sponsors MNRD?",
+    "answer": "Our sponsors are listed  on our website under the tab sponsors. A link to this part of our website is here: https://www.mnrollerderby.com/sponsors/",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "28",
+    "question": "How can I learn how to officiate?",
+    "answer": "To learn how to officiate, it is suggested to reach out to the MNRD Officials captains. The current officials captains can be found here:  https://mnrg.me/org_charter/ . Captains can suporot you in finding opportiunties to train on different offiiating position. Scrimmages are often good opportunities to learn and practice officiating skills.",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "29",
+    "question": "Can home team skaters also attend Windchill?",
+    "answer": "Home Team skaters are also welcome to attend Windchill. To identify what level of Windchill would be the best to attend, it will be helpful to connect with a trainer.",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "30",
+    "question": "Where can I submit feedback to officals for bouts?",
+    "answer": "There is a form specifically for footage feedback. This is where you can submit feedback about certain calls or any officiating feedback you have about a specific bout or scrimmage that was filmed. That form is located here: https://mnrd.me/footagefeedback",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "31",
+    "question": "Can I substitute any other activities to make attendence if I cannot make enoguh in-person home team practices?",
+    "answer": "Guidelines around activites that can count towards you attendence other than in-person practices are located in the attenence policy. The attendence policy is located in groups.io here: https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Attendance%20Policy%20%28updated10Nov2024%29.pdf",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "32",
+    "question": "What does it mean when a home team pracice is \"For-Not-Against\" ? ",
+    "answer": "A description of For Not Against practices, and how they are counted, is located here: https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Attendance%20Policy%20%28updated10Nov2024%29.pdf",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "33",
+    "question": "Am I allowed to bring my children to practice?",
+    "answer": "Dependents are allowed at practices as needed. Please refer the the Dependent Care policy for guidelines around bringing dependents to practices: https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Dependent%20Care%20Policy%20%28added1Dec2025%29.pdf;",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "34",
+    "question": "How much of a practice do I have to attend for it to count towards my attendance?",
+    "answer": "Information on attendance can be located in the Attendance Policy here: https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Attendance%20Policy%20%28updated10Nov2024%29.pdf",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "35",
+    "question": "What is the email to reach out to MNRD tech comm?",
+    "answer": "techcomm@mnrollerderby.com",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "36",
+    "question": "How can I reach out to ARAE?",
+    "answer": "You are welcome to reach out to ARAE via email by sending an email to arae@mnrollerderby.com",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "37",
+    "question": "What is MNRD's HR email?",
+    "answer": "hr@mnrollerderby.com",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "38",
+    "question": "What is the MNRD code of conduct?",
+    "answer": "MNRD's code of conduct is located here: https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20CODE%20OF%20CONDUCT%20%28adopted%202.6.2022%29.pdf",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "39",
+    "question": "Where can I located the MNRD non disclosure agreement?",
+    "answer": "Here is a link to the current MNRD NDA: https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/Minnesota%20Roller%20Derby%20Member%20Non-Disclosure%20Agreement%20%28added%204.18.2022%29.pdf",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "40",
+    "question": "What is the email for BoD?",
+    "answer": "bod@mnrollerderby.com",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "41",
+    "question": "Who is the current ARAE manager?",
+    "answer": "The current ARAE manager can be located on MNRD's org chart here: https://mnrg.me/org_charter/",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "42",
+    "question": "Can I bring my children backstage on bout day?",
+    "answer": "Please refer the the Dependent Care policy for guidelines around bringing dependents in spaces on bout day: https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Dependent%20Care%20Policy%20%28added1Dec2025%29.pdf;",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "43",
+    "question": "I have an adult dependent that I may need to bring to practice, am I allowed to do that?",
+    "answer": "Dependents are allowed at practices as needed. Please refer the the Dependent Care policy for guidelines around bringing dependents to practices: https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Dependent%20Care%20Policy%20%28added1Dec2025%29.pdf;",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "44",
+    "question": "What are MNRD's mission and values?",
+    "answer": "MNRD's mission and values can be located here: https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Mission%20and%20Values%20%28added%204.18.2022%29.pdf",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "45",
+    "question": "Who are the officials captains?",
+    "answer": "The current captains of the officials can be located in MNRD's org chart here: https://mnrg.me/org_charter/",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "46",
+    "question": "Who is the current finance director of MNRD?",
+    "answer": "The current finance director can be located in MNRD's org chart here: https://mnrg.me/org_charter/",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "47",
+    "question": "Can someone ever be dismissed from the league?",
+    "answer": "Information about league dismissal is located in the Grievance Procedures and League Dismissal Policy here: https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Grievance%20Procedures%20and%20League%20Dismissal%20Policy%20%28updated%208.6.2019%29.pdf",
+    "last updated": "2/13/2026",
+    "active": "TRUE"
+  }
+]
