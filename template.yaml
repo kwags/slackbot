@@ -5,6 +5,11 @@ Description: >
 
   Sample SAM Template for slackbot
 
+Parameters:
+  SlackBotToken:
+    Type: String
+    NoEcho: false
+
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
   Function:
@@ -40,10 +45,6 @@ Resources:
       Environment:
         Variables:
           SLACK_BOT_TOKEN: !Ref SlackBotToken
-            Parameters:
-            SlackBotToken:
-              Type: String
-              NoEcho: true
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
