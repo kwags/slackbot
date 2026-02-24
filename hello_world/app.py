@@ -1,6 +1,7 @@
 import json
 import os
 from slack_sdk import WebClient
+from exactmatch import get_exact_match
 
 client = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
 
@@ -67,9 +68,36 @@ def lambda_handler(event, context):
     elif event_type == "message":
         if data.get("channel_type") != "im":
             return {"statusCode": 200, "body": ""}
+        user_msg = data.get("text", "")
+        
+        # check for exact match in faq list
+        answer = get_exact_match(user_msg)
+        if answer:
+            response_text = answer
+        else:
+            response_text = f"Sorry <@{user}>, I didn't find an exact match for your question."
+
         client.chat_postMessage(
             channel=channel_id,
-            text=f"👋 Hello <@{user}>! I'm the MNRD Slack Chatbot responding to your message!"
+            text=response_text
         )
     return {"statusCode": 200, "body": ""}
 
+# ------------------------------------ #
+#                TEST
+# #client = WebClient... to run test
+# ------------------------------------ #
+
+if __name__ == "__main__":
+    test_questions = [
+        "Where can I find the family and friends discount ticket link?",
+        "How do I submit a leave of absence (LOA) or status change form?",
+        "Do aliens really exist?"
+    ]
+
+    for q in test_questions:
+        answer = get_exact_match(q)
+        if answer:
+            print(f"Question: {q}\nAnswer: {answer}\n")
+        else:
+            print(f"question: {q}\nAnswer: No exact match found.\n")
