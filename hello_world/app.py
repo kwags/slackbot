@@ -59,9 +59,20 @@ def lambda_handler(event, context):
 
     # Respond to mentions
     if event_type == "app_mention":
+        user_msg = data.get("text", "")
+        # remove mention from msg
+        user_msg = user_msg.split(">", 1)[-1].strip()
+
+        # check for exact match in faq list
+        answer = get_exact_match(user_msg)
+        if answer:
+            response_text = answer
+        else:
+            response_text = f"Sorry <@{user}>, I didn't find an exact match for your question."
+
         client.chat_postMessage(
             channel=channel_id,
-            text=f"👋 Hello <@{user}>! I'm the MNRD Slack Chatbot responding to your mention!"
+            text=response_text
         )
 
     # Respond to messages
@@ -90,9 +101,9 @@ def lambda_handler(event, context):
 
 if __name__ == "__main__":
     test_questions = [
-        "Where can I find the family and friends discount ticket link?",
-        "How do I submit a leave of absence (LOA) or status change form?",
-        "Do aliens really exist?"
+        "Where can I find the family and friends discount ticket link?", # exact match ?
+        "How do I submit a leave of absence (LOA) or status change form?", # exact match ?
+        "Do aliens really exist?" # no match ?
     ]
 
     for q in test_questions:
