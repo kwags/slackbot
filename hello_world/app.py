@@ -5,7 +5,7 @@ from exactmatch import get_exact_match
 from keywordmatch import get_keyword_match
 from fuzzymatch import get_fuzzy_match
 
-#client = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
+client = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
 
 def lambda_handler(event, context):
     """Sample pure Lambda function
