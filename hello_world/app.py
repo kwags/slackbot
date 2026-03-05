@@ -2,6 +2,7 @@ import json
 import os
 from slack_sdk import WebClient
 from exactmatch import get_exact_match
+from keywordmatch import get_keyword_match
 from fuzzymatch import get_fuzzy_match
 
 client = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
@@ -65,9 +66,12 @@ def lambda_handler(event, context):
 
         # check for exact match in faq list
         answer = get_exact_match(user_msg)
+         # check for keywordmatch in faq list
+        if not answer:
+            answer = get_keyword_match(user_msg)
         # check for fuzzy match in faq list
         if not answer:
-            answer = get_fuzzy_match(user_msg, threshold=60)
+            answer = get_fuzzy_match(user_msg)
         if not answer:
             response_text = f"Sorry <@{user}>, I didn't find a match for your question."
         else:
@@ -86,9 +90,12 @@ def lambda_handler(event, context):
         
          # check for exact match in faq list
         answer = get_exact_match(user_msg)
+        # check for keywordmatch in faq list
+        if not answer:
+            answer = get_keyword_match(user_msg)
         # check for fuzzy match in faq list
         if not answer:
-            answer = get_fuzzy_match(user_msg, threshold=60)
+            answer = get_fuzzy_match(user_msg)
         if not answer:
             response_text = f"Sorry <@{user}>, I didn't find a match for your question."
         else:
@@ -107,17 +114,20 @@ def lambda_handler(event, context):
 
 if __name__ == "__main__":
     test_questions = [
-        "Where can I find the family and friends discount ticket link?", # exact match ?
-        "How do I submit a leave of absence (LOA) or status change form?", # exact match ?
-        "friends and family ticket link", # fuzzy match ?
-        "Where do I submit an LOA form?", # fuzzy match ?
-        "Do aliens really exist?" # no match ?
+        "Where can I find the family and friends discount ticket link?", # exact match
+        "How do I submit a leave of absence (LOA) or status change form?", # exact match
+        "Where is the LOA form?", # keyword match
+        "friends and family ticket link", # fuzzy match
+        "Where do I submit an LOA form?", # fuzzy match
+        "Do aliens really exist?" # no match
     ]
 
     for q in test_questions:
         answer = get_exact_match(q)
         if not answer:
-            answer = get_fuzzy_match(q, threshold=60)
+            answer = get_keyword_match(q)
+        if not answer:
+            answer = get_fuzzy_match(q)
         if answer:
             print(f"Question: {q}\nAnswer: {answer}\n")
         if not answer:
