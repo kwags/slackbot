@@ -64,7 +64,7 @@ def lambda_handler(event, context):
         user_msg = user_msg.split(">", 1)[-1].strip()
 
         # get answer
-        answer = get_answer
+        answer = get_answer(user_msg)
         
         if not answer:
             response_text = f"Sorry <@{user}>, I didn't find a match for your question."
@@ -84,7 +84,7 @@ def lambda_handler(event, context):
         user_msg = data.get("text", "")
         
         # get answer
-        answer = get_answer
+        answer = get_answer(user_msg)
         
         if not answer:
             response_text = f"Sorry <@{user}>, I didn't find a match for your question."
