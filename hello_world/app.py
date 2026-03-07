@@ -1,9 +1,7 @@
 import json
 import os
 from slack_sdk import WebClient
-from exactmatch import get_exact_match
-from keywordmatch import get_keyword_match
-from fuzzymatch import get_fuzzy_match
+from answer import get_answer
 
 client = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
 
@@ -65,14 +63,9 @@ def lambda_handler(event, context):
         # remove mention from msg
         user_msg = user_msg.split(">", 1)[-1].strip()
 
-        # check for exact match in faq list
-        answer = get_exact_match(user_msg)
-         # check for keywordmatch in faq list
-        if not answer:
-            answer = get_keyword_match(user_msg)
-        # check for fuzzy match in faq list
-        if not answer:
-            answer = get_fuzzy_match(user_msg)
+        # get answer
+        answer = get_answer
+        
         if not answer:
             response_text = f"Sorry <@{user}>, I didn't find a match for your question."
         else:
@@ -90,14 +83,9 @@ def lambda_handler(event, context):
             return {"statusCode": 200, "body": ""}
         user_msg = data.get("text", "")
         
-         # check for exact match in faq list
-        answer = get_exact_match(user_msg)
-        # check for keywordmatch in faq list
-        if not answer:
-            answer = get_keyword_match(user_msg)
-        # check for fuzzy match in faq list
-        if not answer:
-            answer = get_fuzzy_match(user_msg)
+        # get answer
+        answer = get_answer
+        
         if not answer:
             response_text = f"Sorry <@{user}>, I didn't find a match for your question."
         else:
@@ -125,11 +113,7 @@ if __name__ == "__main__":
     ]
 
     for q in test_questions:
-        answer = get_exact_match(q)
-        if not answer:
-            answer = get_keyword_match(q)
-        if not answer:
-            answer = get_fuzzy_match(q)
+        answer = get_answer(q)
         if answer:
             print(f"Question: {q}\nAnswer: {answer}\n")
         if not answer:
