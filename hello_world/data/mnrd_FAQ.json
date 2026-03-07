@@ -18,31 +18,31 @@
   {
     "id": "3",
     "question": "How do I file or submit a grievance?",
-    "answer": "You can file a grievance by filling out the following form located here: https://mnrd.me/grievance",
+    "answer": "You can file a grievance by filling out the following form located here: https://docs.google.com/forms/d/e/1FAIpQLScRKYA1pv6ovsXFA4PE--TpUo6uiqzU0vDaNhD7KjbNFUOreQ/viewform",
     "keywords": "file a complaint, submit a grievance, grievance form, file grievance",
-    "last updated": "2/13/2026",
+    "last updated": "3/5/2026",
     "active": "TRUE"
   },
   {
     "id": "4",
     "question": "How do I submit or find the dues waiver form?",
     "answer": "To submit a dues waiver click here: mnrd.me/dueswaiver",
-    "keywords": "dues waiver, fee waiver, submit dues waiver, waive dues",
+    "keywords": "dues waiver, fee waiver, submit dues waiver, waive dues, can't afford dues",
     "last updated": "3/5/2026",
     "active": "TRUE"
   },
   {
     "id": "5",
     "question": "How do I find and apply for open league jobs?",
-    "answer": "You can email HR@mnrollerderby.com\n to connect with the jobs manager to sign up for an open position. To see available positions, check the jobs spreadsheet here: https://docs.google.com/spreadsheets/d/1TXl06s7IUALyyp_PWVAhOhHLZTVPkI_QNRhoL2qKsXI/edit?gid=0#gid=0.",
+    "answer": "You can email HR@mnrollerderby.com to connect with the jobs manager to sign up for an open position. To see available positions, check the jobs spreadsheet here: https://mnrd.me/openjobs",
     "keywords": "apply leauge job, open league positions, contact jobs manager, league job",
-    "last updated": "2/13/2026",
+    "last updated": "3/5/2026",
     "active": "TRUE"
   },
   {
     "id": "6",
     "question": "Where can I find the MNRD org chart and leadership information?",
-    "answer": "The org chart is located here: https://mnrd.me/orgchart",
+    "answer": "You can find information about league leadership in the MNRD org chart is located here: https://mnrd.me/orgchart",
     "keywords": "org chart, leadership info, organizational chart, who is in charge, who is head",
     "last updated": "3/5/2026",
     "active": "TRUE"
@@ -52,15 +52,15 @@
     "question": "Who are the current Board of Directors (BoD) members?",
     "answer": "Members of the current Board of Directors can be located on our org chart. The org chart can be located here: https://mnrd.me/orgchart",
     "keywords": "board of directors, bod members, current board, board members",
-    "last updated": "2/19/2026",
+    "last updated": "3/5/2026",
     "active": "TRUE"
   },
   {
     "id": "8",
     "question": "Who is the current Safety Director?",
     "answer": "The current safety director can be located on the MNRD org chart. The org chart is located here: https://mnrd.me/orgchart",
-    "keywords": "safety director",
-    "last updated": "2/19/2026",
+    "keywords": "safety director, in charge of safety",
+    "last updated": "3/5/2026",
     "active": "TRUE"
   },
   {
@@ -241,10 +241,10 @@
   },
   {
     "id": "31",
-    "question": "Can I substitute any other activities to make attendence if I cannot make enoguh in-person home team practices?",
+    "question": "Can I substitute any other activities to make attendance if I cannot make enough in-person home team practices?",
     "answer": "Guidelines around activities that can count towards you attendence other than in-person practices are located in the attenence policy. The attendance policy is located in groups.io here: https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Attendance%20Policy%20%28updated10Nov2024%29.pdf",
     "keywords": "count towards practice, makeup practice, substitute for practice",
-    "last updated": "3/5/2026",
+    "last updated": "3/7/2026",
     "active": "TRUE"
   },
   {
@@ -386,8 +386,48 @@
   {
     "id": "49",
     "question": "What is the attendance policy?",
-    "answer": "Information on attendance can be located in the Attendance Policy here: https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Attendance%20Policy%20%28updated10Nov2024%29.pdf",
+    "answer": "Information about attendance can be located in the Attendance Policy here: https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Attendance%20Policy%20%28updated10Nov2024%29.pdf",
     "keywords": "attendance policy, attendance requirement",
+    "last updated": "3/6/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "50",
+    "question": "What time is practice?",
+    "answer": "Practice days, times, and locations can be found in the #mnrdcalendar channel. You can learn how to add the MNRD calendar to your own calendar here: https://minnesotarollerderby.groups.io/g/main/wiki/3679",
+    "keywords": "when is practice, practice time",
+    "last updated": "3/5/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "51",
+    "question": "Where is practice?",
+    "answer": "Practice days, times, and locations can be found in the #mnrdcalendar channel. You can learn how to add the MNRD calendar to your own calendar here: https://minnesotarollerderby.groups.io/g/main/wiki/3679",
+    "keywords": "practice location, practice located",
+    "last updated": "3/5/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "52",
+    "question": "Where is the MNRD calendar?",
+    "answer": "Practice and event days, times, and locations can be found in the #mnrdcalendar channel. You can learn how to add the MNRD league calendar to your own calendar here: https://minnesotarollerderby.groups.io/g/main/wiki/3679",
+    "keywords": "league calendar, calendar",
+    "last updated": "3/6/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "53",
+    "question": "How do I sign up for a bout night job?",
+    "answer": "You can sign up for bout night jobs here: https://mnrd.me/boutnightjobs",
+    "keywords": "bout night jobs, bout job, game night job, game job",
+    "last updated": "3/5/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "54",
+    "question": "How do I pay my dues?",
+    "answer": "Dues are sent via PayPal invoice to your email address. You can follow the PayPal link within that email to make a dues payment. You can also learn more about how to view and pay your PayPal invoice by watching this tutorial video: https://mnrd.me/howtopaypal",
+    "keywords": "pay dues, pay invoice, view invoice",
     "last updated": "3/5/2026",
     "active": "TRUE"
   }
