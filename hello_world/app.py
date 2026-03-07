@@ -57,6 +57,7 @@ def lambda_handler(event, context):
     event_type = data.get("type")
     channel_id = data.get("channel")
     user = data.get("user")
+    thread_ts = data.get("thread_ts", data.get("ts"))
 
     # Respond to mentions
     if event_type == "app_mention":
@@ -79,7 +80,8 @@ def lambda_handler(event, context):
 
         client.chat_postMessage(
             channel=channel_id,
-            text=response_text
+            text=response_text,
+            thread_ts=thread_ts
         )
 
     # Respond to messages
