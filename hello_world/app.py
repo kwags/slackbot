@@ -118,6 +118,8 @@ if __name__ == "__main__":
         "What is the attendence policy?", # fuzzy match
         "Where do I submit an LOA form?", # keyword
         "what is the email address for the board?", #fuzzy match
+        "what is the attendence requirment?", # spellcheck keyword fuzzy
+        "what is the email for the bod?",
         "Do aliens really exist?" # no match
     ]
 
