@@ -13,7 +13,7 @@ FAQ_LIST = load_FAQ()
 
 # search faq for keyword match
 # return corresponding answer if found, otherwise None
-def get_keyword_match(user_msg: str) -> str | None:
+def get_keyword_match(user_msg):
 
     # convert user message to lower case and remove white space
     user_message_lower = user_msg.lower().strip()
@@ -31,10 +31,10 @@ def get_keyword_match(user_msg: str) -> str | None:
             # if a keyword match is found, return corresponding answer
             for keyword in keyword_list:
                 if keyword in user_message_lower:
-                    return answer
+                    return answer, keyword
             
     # if no keyword match, return none
-    return None
+    return None, None
 
 # -------------- #
 #      TEST

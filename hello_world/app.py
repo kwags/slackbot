@@ -1,9 +1,17 @@
 import json
 import os
+import logging
+
 from slack_sdk import WebClient
 from answer import get_answer
 
 client = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+
+if not logger.handlers:
+    handler = logging.StreamHandler()
+    logger.addHandler(handler)
 
 def lambda_handler(event, context):
     """Sample pure Lambda function
@@ -104,17 +112,14 @@ def lambda_handler(event, context):
 
 if __name__ == "__main__":
     test_questions = [
-        "Where can I find the family and friends discount ticket link?", # exact match
+        "Where can I find the friends and family discount ticket link?", # exact match
         "How do I submit a leave of absence (LOA) or status change form?", # exact match
         "Where is the LOA form?", # keyword match
-        "friends and family ticket link", # fuzzy match
-        "Where do I submit an LOA form?", # fuzzy match
+        "What is the attendence policy?", # fuzzy match
+        "Where do I submit an LOA form?", # keyword
+        "what is the email address for the board?", #fuzzy match
         "Do aliens really exist?" # no match
     ]
 
     for q in test_questions:
         answer = get_answer(q)
-        if answer:
-            print(f"Question: {q}\nAnswer: {answer}\n")
-        if not answer:
-            print(f"question: {q}\nAnswer: No match found.\n")
