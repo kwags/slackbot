@@ -1,2 +1,4 @@
 slack-sdk
 rapidfuzz
+scikit-learn
+nltk
