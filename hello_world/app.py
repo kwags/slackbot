@@ -120,7 +120,11 @@ if __name__ == "__main__":
         "what is the email address for the board?", #fuzzy match
         "what is the attendence requirment?", # spellcheck keyword fuzzy
         "what is the email for the bod?",
+        "Who is on the board?",
         "where is the greivance form?",
+        "When does the board meet?", # tfidf
+        "How long are board members in office?", # tfidf
+        "Who is eligible for the board?", # tfidf
         "Do aliens really exist?" # no match
     ]
 
