@@ -42,9 +42,27 @@ Resources:
             - "*"
       Policies:
         - AWSLambdaExecute
+        - Statement:
+            Effect: Allow
+            Action:
+              - lambda:InvokeFunction
+            Resource: !GetAtt SlackWorkerFunction.Arn
       Environment:
         Variables:
           SLACK_BOT_TOKEN: !Ref SlackBotToken
+          WORKER_FUNCTION_NAME: !Ref SlackWorkerFunction
+  SlackWorkerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: hello_world/
+      Runtime: python3.11
+      Handler: worker.lambda_handler
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Environment:
+        Variables:
+          SLACK_BOT_TOKEN: !Ref SlackBotToken
+
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
