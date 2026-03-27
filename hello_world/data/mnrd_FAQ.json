@@ -2,25 +2,25 @@
   {
     "id": "1",
     "question": "Where can I find the friends and family discount ticket link?",
-    "answer": "The friends and family discount link is located on the Ticket Quick Info document located here: https://docs.google.com/document/d/1kErUuSZYr5XW0lo9VFSvvjhMnyC2W3gDDM0bdkb1rXg/edit?tab=t.0",
-    "keywords": "ticket discount, ticket link, friends and family ticket",
-    "last updated": "2/13/2026",
+    "answer": "The friends and family discount link is located on the Ticket Quick Info document located here: <https://docs.google.com/document/d/1kErUuSZYr5XW0lo9VFSvvjhMnyC2W3gDDM0bdkb1rXg/edit?tab=t.0|Ticket Quick Info>",
+    "keywords": "ticket discount, ticket link, friends and family ticket, discount tickets",
+    "last updated": "3/16/2026",
     "active": "TRUE"
   },
   {
     "id": "2",
     "question": "How do I submit a leave of absence (LOA) or status change form?",
-    "answer": "To submit a leave of absence, you can fill out a status change form located here: <https://mnrd.me/loa|mnrd.me/loa>",
-    "keywords": "LOA form, leave of absence, status change, submit LOA",
-    "last updated": "2/13/2026",
+    "answer": "To submit a leave of absence, you can fill out a status change form located here: <https://mnrd.me/loa|mnrd.me/loa>. You can read more about the loa policy here: <chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Leave%20of%20Absence%20and%20Inactivity%20Policy%20%28updated%204Mar2026%29.pdf|Leave of Absence Policy>",
+    "keywords": "LOA form, leave of absence, status change, submit LOA, loa policy, leave of abscence policy",
+    "last updated": "3/27/2026",
     "active": "TRUE"
   },
   {
     "id": "3",
     "question": "How do I file or submit a grievance?",
-    "answer": "You can file a grievance by filling out the following form located here: <https://mnrd.me/grievance|mnrd.me/grievance>",
+    "answer": "You can file a grievance by filling out the following form located here: <https://mnrd.me/grievance|mnrd.me/grievance>. If you'd like more information about Grievance Procedures, you can read about that here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Grievance%20Procedures%20and%20League%20Dismissal%20Policy%20%28updated%208.6.2019%29.pdf|Grievance Procedure>",
     "keywords": "file a complaint, submit a grievance, grievance form, file grievance",
-    "last updated": "3/7/2026",
+    "last updated": "3/27/2026",
     "active": "TRUE"
   },
   {
@@ -51,7 +51,7 @@
     "id": "7",
     "question": "Who are the current Board of Directors (BoD) members?",
     "answer": "Members of the current Board of Directors can be located on our org chart. The org chart can be located here: <https://mnrd.me/orgchart|mnrd.me/orgchart>",
-    "keywords": "board of directors, bod members, current board, board members",
+    "keywords": "who are board of directors, who are the bod members, current board, who board members",
     "last updated": "3/5/2026",
     "active": "TRUE"
   },
@@ -98,9 +98,9 @@
   {
     "id": "13",
     "question": "What is the MNRD membership policy?",
-    "answer": "The MNRD membership policy is located in groups.io in the files section. Here is a direct link to the policy: https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Membership%20Policy%20%28updated%206October2025%29.pdf",
+    "answer": "The MNRD membership policy can be viewed here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Membership%20Policy%20%28updated%206October2025%29.pdf|Membership Policiy>",
     "keywords": "membership policy, MNRD membership, membership guidelines",
-    "last updated": "2/22/2026",
+    "last updated": "3/27/2026",
     "active": "TRUE"
   },
   {
@@ -186,7 +186,7 @@
   {
     "id": "24",
     "question": "Where do I find people to carpool with in MNRD?",
-    "answer": "There is a channel named #carpools intended to support folks in creating local carpools.",
+    "answer": "There is a channel named <#C0ALLGX0VSR> intended to support folks in creating local carpools.",
     "keywords": "carpool, get a ride",
     "last updated": "3/5/2026",
     "active": "TRUE"
@@ -394,7 +394,7 @@
   {
     "id": "50",
     "question": "What time is practice?",
-    "answer": "Practice days, times, and locations can be found in the #mnrdcalendar channel. You can learn how to add the MNRD calendar to your own calendar here: <https://minnesotarollerderby.groups.io/g/main/wiki/3679|MNRD Calendar Wiki>",
+    "answer": "Practice days, times, and locations can be found in the <#C0AM2SWPNSV> channel. You can learn how to add the MNRD calendar to your own calendar here: <https://minnesotarollerderby.groups.io/g/main/wiki/3679|MNRD Calendar Wiki>",
     "keywords": "when is practice, practice time",
     "last updated": "3/5/2026",
     "active": "TRUE"
@@ -402,7 +402,7 @@
   {
     "id": "51",
     "question": "Where is practice?",
-    "answer": "Practice days, times, and locations can be found in the #mnrdcalendar channel. You can learn how to add the MNRD calendar to your own calendar here: <https://minnesotarollerderby.groups.io/g/main/wiki/3679|MNRD Calendar Wiki>",
+    "answer": "Practice days, times, and locations can be found in the <#C0AM2SWPNSV> channel. You can learn how to add the MNRD calendar to your own calendar here: <https://minnesotarollerderby.groups.io/g/main/wiki/3679|MNRD Calendar Wiki>",
     "keywords": "practice location, practice located",
     "last updated": "3/5/2026",
     "active": "TRUE"
@@ -410,7 +410,7 @@
   {
     "id": "52",
     "question": "Where is the MNRD calendar?",
-    "answer": "Practice and event days, times, and locations can be found in the #mnrdcalendar channel. You can learn how to add the MNRD league calendar to your own calendar here: <https://minnesotarollerderby.groups.io/g/main/wiki/3679|MNRD Calendar Wiki>",
+    "answer": "Practice and event days, times, and locations can be found in the <#C0AM2SWPNSV> channel. You can learn how to add the MNRD league calendar to your own calendar here: <https://minnesotarollerderby.groups.io/g/main/wiki/3679|MNRD Calendar Wiki>",
     "keywords": "league calendar, calendar",
     "last updated": "3/6/2026",
     "active": "TRUE"
@@ -429,6 +429,54 @@
     "answer": "Dues are sent via PayPal invoice to your email address. You can follow the PayPal link within that email to make a dues payment. You can also learn more about how to view and pay your PayPal invoice by watching this tutorial video: <https://mnrd.me/howtopaypal|mnrd.me/howtopaypal>",
     "keywords": "pay dues, pay invoice, view invoice",
     "last updated": "3/5/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "55",
+    "question": "What is my attendance?",
+    "answer": "Please reach out to your team captains to find out your attendance. Team captains can be found here: <https://mnrd.me/orgchart|mnrd.me/orgchart>",
+    "keywords": "my attendance, current attendance",
+    "last updated": "3/14/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "56",
+    "question": "What is the grievance policy?",
+    "answer": "The Grievance Procedures can be viewed here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Grievance%20Procedures%20and%20League%20Dismissal%20Policy%20%28updated%208.6.2019%29.pdf|Grievance Procedure>",
+    "keywords": "grievance procedure, grievance policy, complaint procedure, complaint policy",
+    "last updated": "3/15/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "57",
+    "question": "What membership class am I?",
+    "answer": "There are five different membership classes including: Skater, Administrative, Session, Volunteers, and Officials. You can read more about the membership classes here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Membership%20Policy%20%28updated23Mar2026%29.pdf|MNRD Membership and Classification Policy>",
+    "keywords": "membership class, skater class, membership classes",
+    "last updated": "3/27/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "58",
+    "question": "What does dmc stand for?",
+    "answer": "DMC stands for Directors, Managers, and Coordinators",
+    "keywords": "dmc meaning, dmc mean",
+    "last updated": "3/27/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "59",
+    "question": "What is the transfer policy?",
+    "answer": "Information about the Transfer Policy can be viewed here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Transfer%20Policy%20%28updated%208.30.2024%29.pdf|MNRD Transfer Policy>",
+    "keywords": "transfer policy, transfer skater, transfer mnrd",
+    "last updated": "3/27/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "60",
+    "question": "Where can I view the league bylaws?",
+    "answer": "The MNRD League Bylaws can be viewed here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/Bylaws_%20Amended%20and%20Restated%20Bylaws%20%28updated%203.16.2023%29.pdf|MNRD Bylaws>",
+    "keywords": "mnrd bylaws, league bylaws",
+    "last updated": "3/27/2026",
     "active": "TRUE"
   }
 ]

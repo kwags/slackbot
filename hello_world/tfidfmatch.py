@@ -1,5 +1,6 @@
 import os
 import json
+import re
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -11,7 +12,11 @@ DOC_FILE = os.path.join(os.path.dirname(__file__), "data/mnrd_bylaws.json")
 with open(DOC_FILE, "r") as f:
     document = json.load(f) 
 
-corpus = [doc["section"] + doc["text"] for doc in document]
+def clean_section(section):
+    section = re.sub(r'(Article|Section)\s+\S+|\d+(\.\d+)*|[|:]', '', section)
+    return ' '.join(section.split())
+
+corpus = [clean_section(doc["section"]) + " " + doc["text"] for doc in document]
 vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(1,2), lowercase=True)
 tfidf_matrix = vectorizer.fit_transform(corpus)
 
@@ -40,10 +45,11 @@ def format_tfidf_answer(doc, max_words = 20):
     words = text.split()
     if len(words) > max_words:
         text = " ".join(words[:max_words]) + "..."
-    
+
+    raw_url = link.split("|")[0].strip("<>")
     answer = (
-        f"According to the {source} {section} \n{text} "
-        f"You can read more about this here: {link}"
+        f"According to the {link} {section} \n{text} "
+        f"<{raw_url}|read more>"
     )
 
     return answer
