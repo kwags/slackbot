@@ -5,7 +5,7 @@ from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 from answer import get_answer
 
-client = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
+#client = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
@@ -84,8 +84,12 @@ if __name__ == "__main__":
         "When does the board meet?", # tfidf
         "How long are board members in office?", # tfidf
         "Who is eligible for the board?", # tfidf
+        "Who is eligible for the board of directiors?", # tfidf
+        "Who is eligible for the bod", # tfidf
         "Do aliens really exist?" # no match
     ]
 
     for q in test_questions:
         answer = get_answer(q)
+        print(f"Q: {q}")
+        print(f"A: {answer}\n")

@@ -38,7 +38,7 @@ for i, faq in enumerate(FAQ_LIST):
 # if match ratio is 85%+ return corresponding answer
 # otherwise search for fuzzy match to keywords
 # otherwise return None
-def get_fuzzy_match(user_msg: str, threshold: int = 85, return_score=False):
+def get_fuzzy_match(user_msg: str, threshold: int = 92, return_score=False):
 
     user_msg_norm = normalize(user_msg)
     
