@@ -1,30 +1,19 @@
-import os
-import json
-
-# FAQ file
-FAQ_FILE = os.path.join(os.path.dirname(__file__), "data/mnrd_FAQ.json")
-
-# load FAQ file
-def load_FAQ():
-    with open(FAQ_FILE, "r") as f:
-        return json.load(f) 
-
-FAQ_LIST = load_FAQ()
+from loadfaq import FAQ_LIST, normalize
 
 # search faq for exact match to user's message
 # return corresponding answer if found, otherwise None
-def get_exact_match(user_msg: str) -> str | None:
+def get_exact_match(user_msg):
 
-    # convert user message to lower case and remove white space
-    user_message_lower = user_msg.lower().strip()
+    # normalize user message
+    user_message_norm = normalize(user_msg)
 
     # check if there's an exact match to question in FAQ 
     for faq_entry in FAQ_LIST:
-            question = faq_entry.get("question", "").strip().lower()
+            question = normalize(faq_entry.get("question", ""))
             answer = faq_entry.get("answer", "")
             
             # if it's an exact match, return corresponding answer
-            if user_message_lower == question:
+            if user_message_norm == question:
                 return answer 
             
     # if no exact match, return none

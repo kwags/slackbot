@@ -1,22 +1,12 @@
-import os
-import json
-
-# FAQ file
-FAQ_FILE = os.path.join(os.path.dirname(__file__), "data/mnrd_FAQ.json")
-
-# load FAQ file
-def load_FAQ():
-    with open(FAQ_FILE, "r") as f:
-        return json.load(f) 
-
-FAQ_LIST = load_FAQ()
+from loadfaq import FAQ_LIST
+from normalizetext import normalize
 
 # search faq for keyword match
 # return corresponding answer if found, otherwise None
 def get_keyword_match(user_msg):
 
-    # convert user message to lower case and remove white space
-    user_message_lower = user_msg.lower().strip()
+    # normalize user message
+    user_message_norm = normalize(user_msg)
 
     # check if there's an exact match to question in FAQ 
     for faq_entry in FAQ_LIST:
@@ -26,11 +16,11 @@ def get_keyword_match(user_msg):
             if not keywords:
                 continue
             
-            keyword_list = [k.strip().lower() for k in keywords.split(",")]
+            keyword_list = [normalize(k) for k in keywords.split(",")]
 
             # if a keyword match is found, return corresponding answer
             for keyword in keyword_list:
-                if keyword in user_message_lower:
+                if keyword in user_message_norm:
                     return answer, keyword
             
     # if no keyword match, return none
