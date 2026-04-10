@@ -83,9 +83,10 @@ if __name__ == "__main__":
         "where is the greivance form?",
         "When does the board meet?", # tfidf
         "How long are board members in office?", # tfidf
-        "Who is eligible for the board?", # tfidf
-        "Who is eligible for the board of directiors?", # tfidf
-        "Who is eligible for the bod", # tfidf
+        "Who is eligible for the board?", # tfidf 
+        "Who is eligible for the board of directors?", # tfidf 
+        "Who is eligible for the bod", # tfidf 
+        "what is the definition of Active Status?", # tfidf leave doc
         "Do aliens really exist?" # no match
     ]
 
