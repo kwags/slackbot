@@ -7,7 +7,7 @@ corpus = [doc["processed_text"] for doc in DOC_LIST]
 vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(1,2))
 tfidf_matrix = vectorizer.fit_transform(corpus)
 
-def get_tfidf_match(user_msg, threshold=0.2, return_score=False):   
+def get_tfidf_match(user_msg, threshold=0.16, return_score=False):   
     user_msg = normalize(user_msg)
     msg_vec = vectorizer.transform([user_msg])
     similarities = cosine_similarity(msg_vec, tfidf_matrix)[0]
@@ -28,7 +28,9 @@ def get_tfidf_match(user_msg, threshold=0.2, return_score=False):
     return None
 
 def format_tfidf_answer(doc, max_words = 20):
+    article = doc.get("article", "")
     section = doc.get("section", "")
+    subsection = doc.get("subsection", "")
     text = doc.get("text", "")
     link = doc.get("link", "")
     
@@ -37,10 +39,23 @@ def format_tfidf_answer(doc, max_words = 20):
         text = " ".join(words[:max_words]) + "..."
 
     raw_url = link.split("|")[0].strip("<>")
+    header_parts = []
+
+    if article:
+        header_parts.append(article)
+    if section:
+        header_parts.append(section)
+    if subsection:
+        header_parts.append(subsection)
+
+    header = " | ".join(header_parts)
+
     answer = (
-        f"According to the {link} {section} \n{text} "
+        f"According to the {link} {header}\n"
+        f"{text}\n"
         f"<{raw_url}|read more>"
     )
+
 
     return answer
 
@@ -52,6 +67,7 @@ if __name__ == "__main__":
         "When does the board meet?",
         "How long are board members in office?",
         "Who is eligible for the board?",
+        "what is the definition of Active Status?",
         "Do aliens exist?"
     ]
 
