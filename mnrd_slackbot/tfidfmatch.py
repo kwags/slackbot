@@ -4,8 +4,10 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 corpus = [doc["processed_text"] for doc in DOC_LIST]
-vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(1,2))
+vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(1,2), min_df=2, max_df=0.85, sublinear_tf=True)
+
 tfidf_matrix = vectorizer.fit_transform(corpus)
+
 
 def get_tfidf_match(user_msg, threshold=0.16, return_score=False):   
     user_msg = normalize(user_msg)
@@ -56,7 +58,6 @@ def format_tfidf_answer(doc, max_words = 20):
         f"<{raw_url}|read more>"
     )
 
-
     return answer
 
 # -------------- #
@@ -66,8 +67,15 @@ if __name__ == "__main__":
     test_questions = [
         "When does the board meet?",
         "How long are board members in office?",
+        "Who is eligible for the bod?",
         "Who is eligible for the board?",
+        "Who is eligible for the board of directors",
         "what is the definition of Active Status?",
+        "what does Active Status mean?", # embeddings
+        "Who is considered active in the league?",
+        "What if I don't meet requirements anymore?",
+        "Do I lose my membership if I'm inactive?",
+        "what is the definition of inactive status?",
         "Do aliens exist?"
     ]
 
@@ -75,6 +83,8 @@ if __name__ == "__main__":
         answer, score, section = get_tfidf_match(q, return_score=True)
         if answer:
             print(f"Question: {q}\nAnswer: {answer}\nScore: {score}\nSection: {section}")
+            print()
         else:
             print(f"Question: {q}\nAnswer: No TF-IDF match found.")
+            print()
 
