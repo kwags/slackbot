@@ -10,7 +10,11 @@ DOC_FILES = [
 
 def clean_bylaws(text, doc_type):
     if doc_type == "mnrd_bylaws":
+        text = re.sub(r'\b(article|section)\b', '', text, flags=re.IGNORECASE)
+        text = re.sub(r'\b\d+(\.\d+)*\b', '', text)
         text = re.sub(r'[|:]', '', text)
+        text = re.sub(r'\b[IVX]+\b', '', text)
+        subsection = re.sub(r'\b\d+(\.\d+)*\b', '', subsection)
 
     return " ".join(text.split())
 
@@ -31,23 +35,10 @@ def load_docs():
             subsection = doc.get("subsection", "")
             text = doc.get("text", "")
 
-            cleaned_text = clean_bylaws(text, doc_type)
-            cleaned_section = clean_bylaws(section, doc_type)
-            cleaned_article = clean_bylaws(article, doc_type)        
-            text_norm = normalize(cleaned_text)
+            combined = f"{section} {article} {subsection} {text}"
 
-            section_norm = normalize(cleaned_section)
-            article_norm = normalize(cleaned_article)
-            subsection_norm = normalize(subsection)
-            combined_text = section + " " + text + " " + article + " " + subsection
-            cleaned_text = clean_bylaws(combined_text, doc_type)
+            doc["processed_text"] = normalize(combined)
 
-            doc["processed_text"] = (
-                text_norm + " " + text_norm + " " + text_norm +
-                section_norm + " " +
-                subsection_norm + " " +
-                article_norm
-            )   
             doc["source_file"] = os.path.basename(file_path)
             doc["doc_type"] = doc_type
         all_docs.extend(data)
