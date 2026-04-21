@@ -28,7 +28,7 @@ def lambda_handler(event, context):
         answer = get_answer(user_msg)
         
         if not answer:
-            response_text = f"Sorry <@{user}>, I didn't find a match for your question."
+            response_text = f"Sorry <@{user}>, I couldn't find a match for your question. If you'd like to suggest a new FAQ or share feedback, please use this form: <https://forms.gle/pw7GhduacR7n4UJeA|Chatbot Suggestion Form>"
         else:
             response_text = f"Hi <@{user}>! {answer}"
 
@@ -43,13 +43,13 @@ def lambda_handler(event, context):
     # Respond to messages
     elif event_type == "message":
         if channel_type != "im":
-            return
+            return {"statusCode": 200, "body": ""}
 
         answer = get_answer(user_msg)
 
         if not answer:
-            response_text = f"Sorry <@{user}>, I didn't find a match for your question."
-        else:
+            response_text = f"Sorry <@{user}>, I couldn't find a match for your question. If you'd like to suggest a new FAQ or share feedback, please use this form: <https://forms.gle/pw7GhduacR7n4UJeA|Chatbot Suggestion Form>"
+        else:    
             response_text = f"Hi <@{user}>! {answer}"
 
         client.chat_postMessage(
@@ -89,10 +89,16 @@ if __name__ == "__main__":
         "what is the definition of Active Status?", # tfidf leave doc
         "What does Active Status mean?", # tfidf 
         "What is the definition of Inactive status?",  # tfidf
+        "how do i provide feedback for the chatbot?",   
         "Do aliens really exist?" # no match
     ]
 
     for q in test_questions:
         answer = get_answer(q)
         print(f"Q: {q}")
-        print(f"A: {answer}\n")
+        if not answer:
+            response_text = f"A: Sorry, I couldn't find a match for your question. If you'd like to suggest a new FAQ or share feedback, please use this form: <https://forms.gle/pw7GhduacR7n4UJeA|Chatbot Suggestion Form>"
+        else:
+            response_text = f"A: {answer}"
+        print(response_text)
+        print()

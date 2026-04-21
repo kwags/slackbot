@@ -9,7 +9,7 @@ vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(1,2), min_df=2, 
 tfidf_matrix = vectorizer.fit_transform(corpus)
 
 
-def get_tfidf_match(user_msg, threshold=0.16, return_score=False):   
+def get_tfidf_match(user_msg, threshold=0.2, return_score=False):   
     user_msg = normalize(user_msg)
     msg_vec = vectorizer.transform([user_msg])
     similarities = cosine_similarity(msg_vec, tfidf_matrix)[0]
@@ -71,11 +71,12 @@ if __name__ == "__main__":
         "Who is eligible for the board?",
         "Who is eligible for the board of directors",
         "what is the definition of Active Status?",
-        "what does Active Status mean?", # embeddings
+        "what does Active Status mean?",
         "Who is considered active in the league?",
         "What if I don't meet requirements anymore?",
         "Do I lose my membership if I'm inactive?",
         "what is the definition of inactive status?",
+        "Are there players who play soccer too?", 
         "Do aliens exist?"
     ]
 
