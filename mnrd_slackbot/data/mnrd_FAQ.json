@@ -10,9 +10,9 @@
   {
     "id": "2",
     "question": "How do I submit a leave of absence (LOA) or status change form?",
-    "answer": "To submit a leave of absence, you can fill out a status change form located here: <https://mnrd.me/loa|mnrd.me/loa>. You can read more about the loa policy here: <chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Leave%20of%20Absence%20and%20Inactivity%20Policy%20%28updated%204Mar2026%29.pdf|Leave of Absence Policy>",
+    "answer": "To submit a leave of absence, you can fill out a status change form located here: <https://mnrd.me/loa|mnrd.me/loa>. You can read more about the loa policy here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Leave%20of%20Absence%20and%20Inactivity%20Policy%20%28updated%204Mar2026%29.pdf|Leave of Absence Policy>",
     "keywords": "LOA form, leave of absence, status change, submit LOA, loa policy, leave of abscence policy",
-    "last updated": "3/27/2026",
+    "last updated": "3/28/2026",
     "active": "TRUE"
   },
   {
@@ -52,7 +52,7 @@
     "question": "Who are the current Board of Directors (BoD) members?",
     "answer": "Members of the current Board of Directors can be located on our org chart. The org chart can be located here: <https://mnrd.me/orgchart|mnrd.me/orgchart>",
     "keywords": "who are the board of directors, who are the bod members, who is on the board",
-    "last updated": "3/5/2026",
+    "last updated": "4/7/2026",
     "active": "TRUE"
   },
   {
@@ -67,7 +67,7 @@
     "id": "9",
     "question": "Where do I submit my attendance?",
     "answer": "You can submit your attendance through this link: <https://mnrd.me/checkin|mnrd.me/checkin>",
-    "keywords": "submit attendance, attendance tracking, attendance form",
+    "keywords": "submit attendance, attendance tracking, attendance form, attendance link",
     "last updated": "2/22/2026",
     "active": "TRUE"
   },
@@ -106,9 +106,9 @@
   {
     "id": "14",
     "question": "Where can I find the game or bout schedule?",
-    "answer": "MNRD's game scheudule can be located on the MNRD website under the sections \"Events & Tickets.\" To go directly to this page you can click here: <https://www.mnrollerderby.com/events-tickets|mnrollerderby.com/events-tickets>.",
+    "answer": "MNRD's game schedule can be located on the MNRD website under the section \"Events & Tickets.\" To go directly to this page you can click here: <https://www.mnrollerderby.com/events-tickets|mnrollerderby.com/events-tickets>.",
     "keywords": "game scheudle, bout schedule, events schedule",
-    "last updated": "2/13/2026",
+    "last updated": "3/28/2026",
     "active": "TRUE"
   },
   {
@@ -275,8 +275,8 @@
     "id": "35",
     "question": "What is the email to reach out to MNRD tech comm?",
     "answer": "You can reach out to tech comm by sendingn an email to: techcomm@mnrollerderby.com",
-    "keywords": "tech problem, technical difficulty",
-    "last updated": "3/5/2026",
+    "keywords": "tech problem, technical difficulty, tech comm email, contact tech comm, email tech committee",
+    "last updated": "4/15/2026",
     "active": "TRUE"
   },
   {
@@ -475,8 +475,16 @@
     "id": "60",
     "question": "Where can I view the league bylaws?",
     "answer": "The MNRD League Bylaws can be viewed here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/Bylaws_%20Amended%20and%20Restated%20Bylaws%20%28updated%203.16.2023%29.pdf|MNRD Bylaws>",
-    "keywords": "mnrd bylaws, league bylaws",
-    "last updated": "3/27/2026",
+    "keywords": "mnrd bylaws, league bylaws, link bylaws, view bylaws",
+    "last updated": "3/28/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "61",
+    "question": "How can I make suggestions for the chatbot?",
+    "answer": "You can provide your feedback and suggestions for the chatbot here: <https://forms.gle/pw7GhduacR7n4UJeA|Chatbot Suggestion Form>",
+    "keywords": "chatbot suggestion, bot suggestion, chatbot feedback, question suggestion",
+    "last updated": "4/15/2026",
     "active": "TRUE"
   }
 ]
