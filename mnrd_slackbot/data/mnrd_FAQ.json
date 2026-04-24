@@ -74,7 +74,7 @@
   {
     "id": "10",
     "question": "Who are my team captains?",
-    "answer": "Team captains are listed in the MNRD org chart. The org chart is locted here: <https://mnrd.me/orgchart|mnrd.me/orgchart >",
+    "answer": "Team captains are listed in the MNRD org chart. The org chart is located here: <https://mnrd.me/orgchart|mnrd.me/orgchart >",
     "keywords": "team captains, current captains",
     "last updated": "2/19/2026",
     "active": "TRUE"
@@ -515,7 +515,7 @@
     "id": "65",
     "question": "What are the travel teams of MNRD?",
     "answer": "The travel teams of MNRD are: Minnesota All-Stars and Minnesota Nice. You can learn more about them on our website: <https://www.mnrollerderby.com/teams-staff|mnrollerderby.com/teams-staff>",
-    "keywords": "travel teams",
+    "keywords": "name of the travel teams, name travel team",
     "last updated": "4/23/2026",
     "active": "TRUE"
   },
@@ -554,9 +554,25 @@
   {
     "id": "70",
     "question": "What is the onboarding process for new members?",
-    "answer": "Information about membership Intake and onboarding can be viewed here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Old%20Policies%20%28Archive%29/MNRD%20Intake%20Policy%20%28updated%203.23.21%29.pdf|MNRD Membership Intake and Onboarding Policy>",
-    "keywords": "onboarding policy, membership intake, become a member, new member intake",
+    "answer": "Information about membership intake and onboarding can be viewed here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Old%20Policies%20%28Archive%29/MNRD%20Intake%20Policy%20%28updated%203.23.21%29.pdf|MNRD Membership Intake and Onboarding Policy>",
+    "keywords": "onboarding policy, membership intake, become a member, new member intake, onboarding process",
     "last updated": "4/24/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "71",
+    "question": "Where can I view practice footage?",
+    "answer": "The link to season 22 practice footage for home teams can be found here: <https://www.youtube.com/playlist?list=PLQbP7S-JLbxENGIHeXeiL9ejXz9iNmAQX|Season 22 Home Team Practices>. Links to practice footage can typically be found in the #footage channel in Slack.",
+    "keywords": "practice footage link, practice videos",
+    "last updated": "4/24/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "72",
+    "question": "How do I join the All-Stars team?",
+    "answer": "Tryouts for MNRD All-Stars typically occur around the beginning of the calendar year. Contact the director of training or All-Star leadership for more details. <https://mnrd.me/orgchart|mnrd.me/orgchart>",
+    "keywords": "all stars tryout, travel team tryout, join all-stars, join travel team",
+    "last updated": "4/23/2026",
     "active": "TRUE"
   }
 ]
