@@ -259,7 +259,7 @@
     "id": "33",
     "question": "Am I allowed to bring my children to practice?",
     "answer": "Dependents are allowed at practices as needed. Please refer the the Dependent Care policy for guidelines around bringing dependents to practices: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Dependent%20Care%20Policy%20%28added1Dec2025%29.pdf;|Dependent Policy>",
-    "keywords": "children at practice, kids at practice, kids to practice, dependent practice",
+    "keywords": "children at practice, kids at practice, kids to practice, dependent practice, dependent policy",
     "last updated": "3/5/2026",
     "active": "TRUE"
   },
@@ -273,7 +273,7 @@
   },
   {
     "id": "35",
-    "question": "What is the email to reach out to MNRD tech comm?",
+    "question": "What is the email for MNRD tech comm?",
     "answer": "You can reach out to tech comm by sendingn an email to: techcomm@mnrollerderby.com",
     "keywords": "tech problem, technical difficulty, tech comm email, contact tech comm, email tech committee",
     "last updated": "4/15/2026",
@@ -297,11 +297,11 @@
   },
   {
     "id": "38",
-    "question": "What is the MNRD code of conduct?",
-    "answer": "MNRD's code of conduct is located here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20CODE%20OF%20CONDUCT%20%28adopted%202.6.2022%29.pdf|Code of Conduct>",
-    "keywords": "code of conduct",
-    "last updated": "3/5/2026",
-    "active": "TRUE"
+    "question": "What is the code of conduct?",
+    "answer": "Information about the code of conduct can be viewed here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20CODE%20OF%20CONDUCT%20%28adopted%202.6.2022%29.pdf|MNRD Code of Conduct>",
+    "keywords": "view code of conduct, code of conduct link",
+    "last updated": "4/24/2026",
+    "active": "FALSE"
   },
   {
     "id": "39",
@@ -395,7 +395,7 @@
     "id": "50",
     "question": "What time is practice?",
     "answer": "Practice days, times, and locations can be found in the <#C0AM2SWPNSV> channel. You can learn how to add the MNRD calendar to your own calendar here: <https://minnesotarollerderby.groups.io/g/main/wiki/3679|MNRD Calendar Wiki>",
-    "keywords": "when is practice, practice time",
+    "keywords": "practice time, when is practice",
     "last updated": "3/5/2026",
     "active": "TRUE"
   },
@@ -426,7 +426,7 @@
   {
     "id": "54",
     "question": "How do I pay my dues?",
-    "answer": "Dues are sent via PayPal invoice to your email address. You can follow the PayPal link within that email to make a dues payment. You can also learn more about how to view and pay your PayPal invoice by watching this tutorial video: <https://mnrd.me/howtopaypal|mnrd.me/howtopaypal>",
+    "answer": "Dues are sent via PayPal invoice to your email address and are typically due on the 15th of the month. You can follow the PayPal link within that email to make a dues payment. You can also learn more about how to view and pay your PayPal invoice by watching this tutorial video: <https://mnrd.me/howtopaypal|mnrd.me/howtopaypal>",
     "keywords": "pay dues, pay invoice, view invoice",
     "last updated": "3/5/2026",
     "active": "TRUE"
@@ -451,8 +451,8 @@
     "id": "57",
     "question": "What membership class am I?",
     "answer": "There are five different membership classes including: Skater, Administrative, Session, Volunteers, and Officials. You can read more about the membership classes here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Membership%20Policy%20%28updated23Mar2026%29.pdf|MNRD Membership and Classification Policy>",
-    "keywords": "membership class, skater class, membership classes",
-    "last updated": "3/27/2026",
+    "keywords": "membership class, skater class, membership classes, what class am i, what is my class, membership and classification policy, membership policy",
+    "last updated": "4/23/2026",
     "active": "TRUE"
   },
   {
@@ -485,6 +485,70 @@
     "answer": "You can provide your feedback and suggestions for the chatbot here: <https://forms.gle/pw7GhduacR7n4UJeA|Chatbot Suggestion Form>",
     "keywords": "chatbot suggestion, bot suggestion, chatbot feedback, question suggestion",
     "last updated": "4/15/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "62",
+    "question": "When are dues due?",
+    "answer": "Dues are sent via PayPal invoice to your email address and are typically due on the 15th of the month. You can follow the PayPal link within that email to make a dues payment. You can also learn more about how to view and pay your PayPal invoice by watching this tutorial video: <https://mnrd.me/howtopaypal|mnrd.me/howtopaypal>",
+    "keywords": "dues due date, when dues",
+    "last updated": "4/16/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "63",
+    "question": "How do I change my membership class?",
+    "answer": "Membership class can be updated using the roster update form here: <https://mnrd.me/rosterupdate|mnrd.me/rosterupdate> More information about changing class can be viewed here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Member%20Class%20Change%20Policy%20%2812.22.2021%29.pdf|MNRD Member Class Change Policy>",
+    "keywords": "change membership class, change class, update roster, member class change policy, class change policy",
+    "last updated": "4/23/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "64",
+    "question": "What are the home teams of MNRD?",
+    "answer": "The home teams of MNRD are: Bodies of Water (blue), Maul Rats (pink), Roller Vortex (lavender), and Wednesday Warnings (safety green). You can learn more about them on our website: <https://www.mnrollerderby.com/teams-staff|mnrollerderby.com/teams-staff>",
+    "keywords": "home team names, home team colors",
+    "last updated": "4/23/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "65",
+    "question": "What are the travel teams of MNRD?",
+    "answer": "The travel teams of MNRD are: Minnesota All-Stars and Minnesota Nice. You can learn more about them on our website: <https://www.mnrollerderby.com/teams-staff|mnrollerderby.com/teams-staff>",
+    "keywords": "travel teams, travel team",
+    "last updated": "4/23/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "66",
+    "question": "What is the draft policy?",
+    "answer": "Information about the draft policy can be viewed here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Draft%20Policy%20%28updated%2012.22.2021%29.pdf|MNRD Draft Policy>",
+    "keywords": "get drafted, draft policy",
+    "last updated": "4/24/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "68",
+    "question": "What is the safety protocol?",
+    "answer": "Information about safety protocol can be viewed here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRG%20Safety%20Protocol%20SP%20%28updated%208-30-15%29.pdf|MNRD Safety Protocol>",
+    "keywords": "safety protocol, safety procedure",
+    "last updated": "4/24/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "69",
+    "question": "What is the coaching policy?",
+    "answer": "Information about the coaching policy can be viewed here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Coaching%20Policy%20%28updated%2012.22.2021%29.pdf|MNRD Coaching Policy>",
+    "keywords": "coaching policy, coaching procedure",
+    "last updated": "4/24/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "70",
+    "question": "How do I resign from DMC?",
+    "answer": "Information about resigning from DMC can ber found here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/DMC%20Resignation%20Policy%20%28updated%208.5.2019%29.pdf|MNRD DMC Resignation Policy>",
+    "keywords": "dmc resignation, quit dmc, resign from dmc",
+    "last updated": "4/24/2026",
     "active": "TRUE"
   }
 ]

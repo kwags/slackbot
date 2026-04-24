@@ -87,9 +87,10 @@ if __name__ == "__main__":
         "Who is eligible for the board of directors?", # tfidf 
         "Who is eligible for the bod", # tfidf 
         "what is the definition of Active Status?", # tfidf leave doc
-        "What does Active Status mean?", # tfidf 
         "What is the definition of Inactive status?",  # tfidf
         "how do i provide feedback for the chatbot?",   
+        "What happens if someone doesn't follow the code of conduct?",
+        "Can I resign from dmc?",
         "Do aliens really exist?" # no match
     ]
 
