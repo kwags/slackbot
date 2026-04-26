@@ -2,6 +2,8 @@ import json
 import os
 import logging
 import boto3
+import urllib.request
+import urllib.parse
 
 # Worker Lambda
 WORKER_FUNCTION_NAME = os.environ["WORKER_FUNCTION_NAME"]
@@ -14,7 +16,26 @@ if not logger.handlers:
     handler = logging.StreamHandler()
     logger.addHandler(handler)
 
+def handle_oauth_callback(code):
+    data = urllib.parse.urlencode({
+        "client_id": os.environ["SLACK_CLIENT_ID"],
+        "client_secret": os.environ["SLACK_CLIENT_SECRET"],
+        "code": code
+    }).encode()
+    req = urllib.request.urlopen("https://slack.com/api/oauth.v2.access", data=data)
+    response = json.loads(req.read().decode())
+    logger.info(f"SLACK OAUTH TOKEN: {response}")
+    return {"statusCode": 200, "body": "App installed successfully! You can close this window."}
+
+
 def lambda_handler(event, context):
+
+    logger.info(f"INCOMING EVENT: {json.dumps(event)}")
+    
+    # Handle OAuth callback
+    query_params = event.get("queryStringParameters") or {}
+    if "code" in query_params:
+        return handle_oauth_callback(query_params["code"])
 
     headers = event.get("headers", {})
 
@@ -29,9 +50,15 @@ def lambda_handler(event, context):
     # Check for URL verification during the event subscription process
     if slack_event.get("type") == "url_verification":
         # Respond with the challenge token to verify the endpoint
-        return {"statusCode": 200, 
-                "body": slack_event.get("challenge")
-        }
+        return {
+        "statusCode": 200,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": json.dumps({
+            "challenge": slack_event.get("challenge")
+        })
+    }
 
     # Extract event data
     data = slack_event.get("event", {})
@@ -56,7 +83,8 @@ def lambda_handler(event, context):
             "text": user_msg,
             "thread_ts": thread_ts,
             "event_type": data.get("type"),
-            "channel_type": data.get("channel_type") 
+            "channel_type": data.get("channel_type"), 
+            "team_id": slack_event.get("team_id")
         })
     )
         logger.info(f"Queued message for worker: {user_msg}")
