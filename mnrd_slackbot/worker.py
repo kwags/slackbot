@@ -1,105 +1,110 @@
+import json
 import os
 import logging
+import boto3
+import urllib.request
+import urllib.parse
 
-from slack_sdk import WebClient
-from slack_sdk.errors import SlackApiError
-from answer import get_answer
+ssm = boto3.client("ssm")
 
-client = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
+
+# Worker Lambda
+WORKER_FUNCTION_NAME = os.environ["WORKER_FUNCTION_NAME"]
+lambda_client = boto3.client("lambda")
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
+if not logger.handlers:
+    handler = logging.StreamHandler()
+    logger.addHandler(handler)
+    
+def get_slack_token():
+    return ssm.get_parameter(
+        Name=os.environ["SLACK_BOT_TOKEN"],
+        WithDecryption=True
+    )["Parameter"]["Value"]
+
+
+def handle_oauth_callback(code):
+    data = urllib.parse.urlencode({
+        "client_id": os.environ["SLACK_CLIENT_ID"],
+        "client_secret": os.environ["SLACK_CLIENT_SECRET"],
+        "code": code
+    }).encode()
+    req = urllib.request.urlopen("https://slack.com/api/oauth.v2.access", data=data)
+    response = json.loads(req.read().decode())
+    logger.info(f"SLACK OAUTH TOKEN: {response}")
+    return {"statusCode": 200, "body": "App installed successfully! You can close this window."}
+
+
 def lambda_handler(event, context):
-    user = event.get("user_id")
-    channel_id = event.get("channel_id")
-    user_msg = event.get("text", "")
-    thread_ts = event.get("thread_ts")
-    event_type = event.get("event_type")
-    channel_type = event.get("channel_type")
 
+    logger.info(f"INCOMING EVENT: {json.dumps(event)}")
+    
+    # Handle OAuth callback
+    query_params = event.get("queryStringParameters") or {}
+    if "code" in query_params:
+        return handle_oauth_callback(query_params["code"])
 
-    # Respond to mentions
-    if event_type == "app_mention":
-        # remove mention
-        user_msg = user_msg.split(">", 1)[-1].strip()
+    headers = event.get("headers", {})
 
-        # get answer
-        answer = get_answer(user_msg)
-        
-        if not answer:
-            response_text = f"Sorry <@{user}>, I couldn't find a match for your question. If you'd like to suggest a new FAQ or share feedback, please use this form: <https://forms.gle/pw7GhduacR7n4UJeA|Chatbot Suggestion Form>"
-        else:
-            response_text = f"Hi <@{user}>! {answer}"
+    # ignore Slack retries
+    if headers.get("X-Slack-Retry-Num"):
+        logger.info("Ignoring Slack retry")
+        return {"statusCode": 200, "body": ""}
 
-        client.chat_postMessage(
-            channel=channel_id,
-            text=response_text,
-            thread_ts=thread_ts,
-            unfurl_links=False,
-            unfurl_media=False
-        )
+    # Parse the incoming event data from Slack
+    try:
+        slack_event = json.loads(event.get("body") or "{}")
+    except json.JSONDecodeError:
+        return {"statusCode": 400, "body": "Invalid JSON"}
 
-    # Respond to messages
-    elif event_type == "message":
-        if channel_type != "im":
-            return {"statusCode": 200, "body": ""}
+    # Check for URL verification during the event subscription process
+    if slack_event.get("type") == "url_verification":
+        # Respond with the challenge token to verify the endpoint
+        return {
+        "statusCode": 200,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body": json.dumps({
+            "challenge": slack_event.get("challenge")
+        })
+    }
 
-        answer = get_answer(user_msg)
-
-        if not answer:
-            response_text = f"Sorry <@{user}>, I couldn't find a match for your question. If you'd like to suggest a new FAQ or share feedback, please use this form: <https://forms.gle/pw7GhduacR7n4UJeA|Chatbot Suggestion Form>"
-        else:    
-            response_text = f"Hi <@{user}>! {answer}"
-
-        client.chat_postMessage(
-            channel=channel_id,
-            text=response_text,
-            unfurl_links=False,
-            unfurl_media=False
-        )
-
-    else:
-        logger.info("Ignored event type")
+    # Extract event data
+    data = slack_event.get("event", {})
+    if not data:
+        return {"statusCode": 200, "body": ""}
+    
+    # Ignore messages from bots
+    if data.get("bot_id"):
+        return {"statusCode": 200, "body": ""}
+    
+    channel_id = data.get("channel")
+    user = data.get("user")
+    thread_ts = data.get("thread_ts", data.get("ts"))
+    user_msg = data.get("text", "")
+    
+    # Inovke worker Lambda
+    try:
+        lambda_client.invoke(
+        FunctionName=WORKER_FUNCTION_NAME,
+        InvocationType="Event",
+        Payload=json.dumps({
+            "user_id": user,
+            "channel_id": channel_id,
+            "text": user_msg,
+            "thread_ts": thread_ts,
+            "event_type": data.get("type"),
+            "channel_type": data.get("channel_type"), 
+            "team_id": slack_event.get("team_id")
+        })
+    )
+        logger.info(f"Queued message for worker: {user_msg}")
+    except Exception as e:
+        logger.error(f"Failed to invoke worker Lambda: {str(e)}")
 
     return {"statusCode": 200, "body": ""}
-
-# ------------------------------------ #
-#                TEST
-# #client = WebClient... to run test
-# ------------------------------------ #
-
-if __name__ == "__main__":
-    test_questions = [
-        "Where can I find the friends and family discount ticket link?", # exact match
-        "How do I submit a leave of absence (LOA) or status change form?", # exact match
-        "Where is the LOA form?", # keyword match
-        "What is the attendence policy?", # fuzzy match
-        "Where do I submit an LOA form?", # keyword
-        "what is the email address for the board?", #fuzzy match
-        "what is the attendence requirment?", # spellcheck keyword fuzzy
-        "what is the email for the bod?",
-        "Who is on the board?",
-        "where is the greivance form?",
-        "When does the board meet?", # tfidf
-        "How long are board members in office?", # tfidf
-        "Who is eligible for the board?", # tfidf 
-        "Who is eligible for the board of directors?", # tfidf 
-        "Who is eligible for the bod", # tfidf 
-        "what is the definition of Active Status?", # tfidf leave doc
-        "What is the definition of Inactive status?",  # tfidf
-        "how do i provide feedback for the chatbot?",   
-        "What happens if someone doesn't follow the code of conduct?",
-        "Can I resign from dmc?",
-        "Do aliens really exist?" # no match
-    ]
-
-    for q in test_questions:
-        answer = get_answer(q)
-        print(f"Q: {q}")
-        if not answer:
-            response_text = f"A: Sorry, I couldn't find a match for your question. If you'd like to suggest a new FAQ or share feedback, please use this form: <https://forms.gle/pw7GhduacR7n4UJeA|Chatbot Suggestion Form>"
-        else:
-            response_text = f"A: {answer}"
-        print(response_text)
-        print()
+   
