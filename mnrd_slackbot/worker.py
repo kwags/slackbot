@@ -11,26 +11,44 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 def lambda_handler(event, context):
-    user = event.get("user_id")
-    channel_id = event.get("channel_id")
-    user_msg = event.get("text", "")
-    thread_ts = event.get("thread_ts")
-    event_type = event.get("event_type")
-    channel_type = event.get("channel_type")
+    try:
+        user = event.get("user_id")
+        channel_id = event.get("channel_id")
+        user_msg = event.get("text", "")
+        thread_ts = event.get("thread_ts")
+        event_type = event.get("event_type")
+        channel_type = event.get("channel_type")
 
+        if not user_msg:
+            return {"statusCode": 200, "body": ""}
 
-    # Respond to mentions
-    if event_type == "app_mention":
-        # remove mention
-        user_msg = user_msg.split(">", 1)[-1].strip()
+        response_text = None
 
-        # get answer
-        answer = get_answer(user_msg)
-        
-        if not answer:
-            response_text = f"Sorry <@{user}>, I couldn't find a match for your question. If you'd like to suggest a new FAQ or share feedback, please use this form: <https://forms.gle/pw7GhduacR7n4UJeA|Chatbot Suggestion Form>"
+        if event_type == "app_mention":
+            user_msg = user_msg.split(">", 1)[-1].strip()
+            answer = get_answer(user_msg)
+
+            if not answer:
+                response_text = f"Sorry <@{user}>, I couldn't find a match for your question. If you'd like to suggest a new FAQ or share feedback, please use this form: <https://forms.gle/pw7GhduacR7n4UJeA|Chatbot Suggestion Form>"
+            else:
+                response_text = f"Hi <@{user}>! {answer}"
+
+        elif event_type == "message":
+
+            if channel_type != "im":
+                logger.info("Ignored non-DM message")
+                return {"statusCode": 200, "body": ""}
+
+            answer = get_answer(user_msg)
+
+            if not answer:
+                response_text = f"Sorry <@{user}>, I couldn't find a match for your question. If you'd like to suggest a new FAQ or share feedback, please use this form: <https://forms.gle/pw7GhduacR7n4UJeA|Chatbot Suggestion Form>"
+            else:
+                response_text = f"Hi <@{user}>! {answer}"
+
         else:
-            response_text = f"Hi <@{user}>! {answer}"
+            logger.info(f"Ignored event type: {event_type}")
+            return {"statusCode": 200, "body": ""}
 
         client.chat_postMessage(
             channel=channel_id,
@@ -40,29 +58,20 @@ def lambda_handler(event, context):
             unfurl_media=False
         )
 
-    # Respond to messages
-    elif event_type == "message":
-        if channel_type != "im":
-            return {"statusCode": 200, "body": ""}
+        return {"statusCode": 200, "body": ""}
 
-        answer = get_answer(user_msg)
+    except Exception as e:
+        logger.exception("Worker failed")
 
-        if not answer:
-            response_text = f"Sorry <@{user}>, I couldn't find a match for your question. If you'd like to suggest a new FAQ or share feedback, please use this form: <https://forms.gle/pw7GhduacR7n4UJeA|Chatbot Suggestion Form>"
-        else:    
-            response_text = f"Hi <@{user}>! {answer}"
+        try:
+            client.chat_postMessage(
+                channel=channel_id,
+                text="⚠️ The chatbot is currently unavailable. Please try again later."
+            )
+        except Exception:
+            logger.exception("Failed fallback message")
 
-        client.chat_postMessage(
-            channel=channel_id,
-            text=response_text,
-            unfurl_links=False,
-            unfurl_media=False
-        )
-
-    else:
-        logger.info("Ignored event type")
-
-    return {"statusCode": 200, "body": ""}
+        return {"statusCode": 500, "body": "error"}
 
 # ------------------------------------ #
 #                TEST

@@ -17,16 +17,32 @@ if not logger.handlers:
     logger.addHandler(handler)
 
 def handle_oauth_callback(code):
-    data = urllib.parse.urlencode({
-        "client_id": os.environ["SLACK_CLIENT_ID"],
-        "client_secret": os.environ["SLACK_CLIENT_SECRET"],
-        "code": code
-    }).encode()
-    req = urllib.request.urlopen("https://slack.com/api/oauth.v2.access", data=data)
-    response = json.loads(req.read().decode())
-    logger.info(f"SLACK OAUTH TOKEN: {response}")
-    return {"statusCode": 200, "body": "App installed successfully! You can close this window."}
+    try:
+        data = urllib.parse.urlencode({
+            "client_id": os.environ["SLACK_CLIENT_ID"],
+            "client_secret": os.environ["SLACK_CLIENT_SECRET"],
+            "code": code
+        }).encode()
 
+        req = urllib.request.urlopen(
+            "https://slack.com/api/oauth.v2.access",
+            data=data
+        )
+
+        response = json.loads(req.read().decode())
+        logger.info(f"OAUTH RESPONSE: {response}")
+
+        return {
+            "statusCode": 200,
+            "body": "App installed successfully!"
+        }
+
+    except Exception:
+        logger.exception("OAuth failed")
+        return {
+            "statusCode": 500,
+            "body": "OAuth failed"
+        }
 
 def lambda_handler(event, context):
 
@@ -45,8 +61,12 @@ def lambda_handler(event, context):
         return {"statusCode": 200, "body": ""}
 
     # Parse the incoming event data from Slack
-    slack_event = json.loads(event.get("body", "{}"))
-
+    try:
+        slack_event = json.loads(event.get("body", "{}"))
+    except json.JSONDecodeError:
+        logger.exception("Invalid Slack payload")
+        return {"statusCode": 400, "body": "Invalid request"}
+    
     # Check for URL verification during the event subscription process
     if slack_event.get("type") == "url_verification":
         # Respond with the challenge token to verify the endpoint
@@ -89,7 +109,7 @@ def lambda_handler(event, context):
     )
         logger.info(f"Queued message for worker: {user_msg}")
     except Exception as e:
-        logger.error(f"Failed to invoke worker Lambda: {str(e)}")
+        logger.exception("Failed to invoke worker Lambda")
 
     return {"statusCode": 200, "body": ""}
    
