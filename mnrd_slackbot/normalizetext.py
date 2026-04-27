@@ -1,16 +1,27 @@
 import re
 
-SYNONYMS = {
-    "bod": "board of directors",
-    "board": "board of directors",
+ABBREVIATIONS = {
+    "bod": "board",
+    "board of directors": "board",
     "loa": "leave of absence",
-    "leave": "leave of absence",
+    "loa-a": "leave of absence non participating",
+    "loa-b": "leave of absence participating"
 }
+
+def abbreviations(text):
+    text = text.lower()
+
+    for k, v in ABBREVIATIONS.items():
+        text = re.sub(rf"\b{re.escape(k)}\b", v, text)
+
+    return text
+
 
 # normalize text
 def normalize(text):
     text = text.lower()
-    text = re.sub(r"[^\w\s]", "", text)  # remove punctuation
-    text = " ".join(text.split())        # remove extra spaces
+    text = re.sub(r"[^\w\s]", "", text)
+    text = abbreviations(text)
+    text = " ".join(text.split())
     return text
 
