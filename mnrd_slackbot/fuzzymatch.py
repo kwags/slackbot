@@ -18,12 +18,12 @@ for i, faq in enumerate(FAQ_LIST):
 # if match ratio is 85%+ return corresponding answer
 # otherwise search for fuzzy match to keywords
 # otherwise return None
-def get_fuzzy_match(user_msg: str, threshold: int = 92, return_score=False):
+def get_fuzzy_match(user_msg: str, threshold: int = 93, return_score=False):
 
     user_msg_norm = normalize(user_msg)
     
-    # fuzzy match against questions using token set ratio
-    result = process.extractOne(user_msg_norm, FAQ_QUESTIONS, scorer=fuzz.token_set_ratio)
+    # fuzzy match against questions using token sort ratio
+    result = process.extractOne(user_msg_norm, FAQ_QUESTIONS, scorer=fuzz.token_sort_ratio)
     if result:
         best_question, score, index = result
         if score >= threshold:
@@ -36,7 +36,7 @@ def get_fuzzy_match(user_msg: str, threshold: int = 92, return_score=False):
     result = process.extractOne(user_msg_norm, KEYWORDS, scorer=fuzz.partial_ratio)
     if result:
         best_keyword, score, index = result
-        if score >= threshold:
+        if score >= 92:
             faq_index = KEYWORD_MAP[KEYWORDS.index(best_keyword)]
             answer = FAQ_LIST[faq_index]["answer"]
             if return_score:
@@ -47,7 +47,7 @@ def get_fuzzy_match(user_msg: str, threshold: int = 92, return_score=False):
     result = process.extractOne(user_msg_norm, KEYWORDS, scorer=fuzz.token_set_ratio)
     if result:
         best_keyword, score, index = result
-        if score >= threshold:
+        if score >= 93:
             faq_index = KEYWORD_MAP[KEYWORDS.index(best_keyword)]
             answer = FAQ_LIST[faq_index]["answer"]
             if return_score:
@@ -72,6 +72,7 @@ if __name__ == "__main__":
         "what is the email address for the board?",
         "where is the greivance form?",
         "what is the email for the bod?",
+        "Who is eligible for the board of directors?",
         "Do aliens really exist?"
     ]
 
