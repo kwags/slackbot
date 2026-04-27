@@ -5,11 +5,6 @@ Description: >
 
   Sample SAM Template for slackbot
 
-Parameters:
-  SlackBotToken:
-    Type: String
-    NoEcho: false
-
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
   Function:
@@ -49,8 +44,7 @@ Resources:
             Resource: !GetAtt SlackWorkerFunction.Arn
       Environment:
         Variables:
-          SLACK_BOT_TOKEN: !Ref SlackBotToken
-          WORKER_FUNCTION_NAME: !Ref SlackWorkerFunction
+          SLACK_BOT_TOKEN: /slackbot/bot-token
   SlackWorkerFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -63,7 +57,7 @@ Resources:
         - AWSLambdaBasicExecutionRole
       Environment:
         Variables:
-          SLACK_BOT_TOKEN: !Ref SlackBotToken
+          SLACK_BOT_TOKEN: /slackbot/bot-token
 
 
 Outputs:
