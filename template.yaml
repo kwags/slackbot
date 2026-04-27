@@ -22,10 +22,10 @@ Globals:
   Api:
     TracingEnabled: true
 Resources:
-  HelloWorldFunction:
+  SlackbotFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: hello_world/
+      CodeUri: mnrd_slackbot/
       Handler: app.lambda_handler
       Runtime: python3.11
       Architectures:
@@ -42,22 +42,40 @@ Resources:
             - "*"
       Policies:
         - AWSLambdaExecute
+        - Statement:
+            Effect: Allow
+            Action:
+              - lambda:InvokeFunction
+            Resource: !GetAtt SlackWorkerFunction.Arn
       Environment:
         Variables:
           SLACK_BOT_TOKEN: !Ref SlackBotToken
+          WORKER_FUNCTION_NAME: !Ref SlackWorkerFunction
+  SlackWorkerFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: mnrd_slackbot/
+      Runtime: python3.11
+      Handler: worker.lambda_handler
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Environment:
+        Variables:
+          SLACK_BOT_TOKEN: !Ref SlackBotToken
+
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
   # Find out more about other implicit resources you can reference within SAM
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
-  HelloWorldFunctionUrlEndpoint:
+  SlackbotUrlEndpoint:
       Description: "URL of the function"
       Value:
-        Fn::GetAtt: HelloWorldFunctionUrl.FunctionUrl
-  HelloWorldFunction:
-    Description: "Hello World Lambda Function ARN"
-    Value: !GetAtt HelloWorldFunction.Arn
-  HelloWorldFunctionIamRole:
-    Description: "Implicit IAM Role created for Hello World function"
-    Value: !GetAtt HelloWorldFunctionRole.Arn
+        Fn::GetAtt: SlackbotFunctionUrl.FunctionUrl
+  SlackbotFunction:
+    Description: "Slackbot Lambda Function ARN"
+    Value: !GetAtt SlackbotFunction.Arn
+  SlackbotFunctionIamRole:
+    Description: "Implicit IAM Role created for Slackbot function"
+    Value: !GetAtt SlackbotFunctionRole.Arn
 

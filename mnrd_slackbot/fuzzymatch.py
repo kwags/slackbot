@@ -1,44 +1,24 @@
-import os
-import json
-import re
 from rapidfuzz import fuzz, process
-
-# FAQ file
-FAQ_FILE = os.path.join(os.path.dirname(__file__), "data/mnrd_FAQ.json")
-
-# load FAQ file
-def load_FAQ():
-    with open(FAQ_FILE, "r") as f:
-        return json.load(f) 
-
-FAQ_LIST = load_FAQ()
-
-# normalize text
-def normalize(text):
-    text = text.lower()
-    text = re.sub(r"[^\w\s]", "", text)  # remove punctuation
-    text = " ".join(text.split())        # remove extra spaces
-    return text
+from loadfaq import FAQ_LIST
+from normalizetext import normalize
 
 # list of FAQ questions and keywords
-FAQ_QUESTIONS = [faq["question"] for faq in FAQ_LIST]
+FAQ_QUESTIONS = [faq["normalized_question"] for faq in FAQ_LIST]
+
 KEYWORDS = []
 KEYWORD_MAP = []
 
 # map each keyword to its FAQ index
 for i, faq in enumerate(FAQ_LIST):
-    kws = faq.get("keywords", "")
-    if not kws:
-        continue
-    kw_list = [k.strip().lower() for k in kws.split(",")]
-    KEYWORDS.extend(kw_list)
-    KEYWORD_MAP.extend([i]*len(kw_list))  
+    for kw in faq["normalized_keywords"]:
+        KEYWORDS.append(kw)
+        KEYWORD_MAP.append(i)
 
 # search faq for fuzzy match to user's message in questions
 # if match ratio is 85%+ return corresponding answer
 # otherwise search for fuzzy match to keywords
 # otherwise return None
-def get_fuzzy_match(user_msg: str, threshold: int = 85, return_score=False):
+def get_fuzzy_match(user_msg: str, threshold: int = 92, return_score=False):
 
     user_msg_norm = normalize(user_msg)
     
