@@ -197,7 +197,7 @@ venv.bak/
 
 # AWS SAM build files
 .aws-sam/
-
+samconfig.toml
 # Slack CLI
 .slack/
 
