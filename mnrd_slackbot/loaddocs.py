@@ -5,7 +5,8 @@ from normalizetext import normalize
 
 DOC_FILES = [
     "data/mnrd_bylaws.json",
-    "data/mnrd_leave.json"
+    "data/mnrd_leave.json",
+    "data/mnrd_codeofconduct.json"
 ]
 
 def clean_bylaws(text, doc_type):
