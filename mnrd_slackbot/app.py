@@ -4,17 +4,16 @@ import logging
 import boto3
 import urllib.request
 import urllib.parse
+import time
+
+get_start_time = time.time()
 
 # Worker Lambda
 WORKER_FUNCTION_NAME = os.environ["WORKER_FUNCTION_NAME"]
 lambda_client = boto3.client("lambda")
 
-logger = logging.getLogger()
+logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
-
-if not logger.handlers:
-    handler = logging.StreamHandler()
-    logger.addHandler(handler)
 
 def handle_oauth_callback(code):
     try:
@@ -31,7 +30,7 @@ def handle_oauth_callback(code):
 
         response = json.loads(req.read().decode())
         logger.info(f"OAUTH RESPONSE: {response}")
-
+        
         return {
             "statusCode": 200,
             "body": "App installed successfully!"
@@ -46,8 +45,8 @@ def handle_oauth_callback(code):
 
 def lambda_handler(event, context):
 
-    logger.info(f"INCOMING EVENT: {json.dumps(event)}")
-    
+    logger.info(f"event=incoming_event | user={event.get('event', {}).get('user')} | channel={event.get('event', {}).get('channel')} | event_type={event.get('event', {}).get('type')}")
+   
     # Handle OAuth callback
     query_params = event.get("queryStringParameters") or {}
     if "code" in query_params:
@@ -63,6 +62,7 @@ def lambda_handler(event, context):
     # Parse the incoming event data from Slack
     try:
         slack_event = json.loads(event.get("body", "{}"))
+        
     except json.JSONDecodeError:
         logger.exception("Invalid Slack payload")
         return {"statusCode": 400, "body": "Invalid request"}
@@ -104,10 +104,12 @@ def lambda_handler(event, context):
             "thread_ts": thread_ts,
             "event_type": data.get("type"),
             "channel_type": data.get("channel_type"), 
-            "team_id": slack_event.get("team_id")
+            "team_id": slack_event.get("team_id"),
+            "start_time": time.time(),
         })
     )
-        logger.info(f"Queued message for worker: {user_msg}")
+        logger.info(f"event=message_received | user={user} | channel={channel_id} | text={user_msg}")
+        
     except Exception as e:
         logger.exception("Failed to invoke worker Lambda")
 
