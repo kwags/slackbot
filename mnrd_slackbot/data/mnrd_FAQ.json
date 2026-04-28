@@ -235,8 +235,8 @@
     "id": "30",
     "question": "Where can I submit feedback to officals for bouts?",
     "answer": "There is a form specifically for footage feedback. This is where you can submit feedback about certain calls or any officiating feedback you have about a specific bout or scrimmage that was filmed. That form is located here: <https://mnrd.me/footagefeedback|mnrd.me/footagefeedback>",
-    "keywords": "footage feedback, officials feedback",
-    "last updated": "3/5/2026",
+    "keywords": "footage feedback, officials feedback, ref feedback, feedback for refs",
+    "last updated": "4/28/2026",
     "active": "TRUE"
   },
   {
@@ -570,9 +570,25 @@
   {
     "id": "72",
     "question": "How do I join the All-Stars team?",
-    "answer": "Tryouts for MNRD All-Stars typically occur around the beginning of the calendar year. Contact the director of training or All-Star leadership for more details. <https://mnrd.me/orgchart|mnrd.me/orgchart>",
-    "keywords": "all stars tryout, travel team tryout, join all-stars, join travel team",
-    "last updated": "4/23/2026",
+    "answer": "Tryouts for MNRD All-Stars typically occur around the beginning of the calendar year. Contact the director of training or All-Stars leadership for more details. <https://mnrd.me/orgchart|mnrd.me/orgchart>",
+    "keywords": "all stars tryout, travel team tryout, join all-stars, join travel team, all star tryout",
+    "last updated": "4/24/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "73",
+    "question": "What are the membership requirements?",
+    "answer": "Membership requirements will vary depending on your membership class. You can review the membership policy here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Membership%20Policy%20%28updated23Mar2026%29.pdf|Membership Policy>",
+    "keywords": "membership requirements, skater requirements",
+    "last updated": "4/26/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "74",
+    "question": "Where can I sign up for events?",
+    "answer": "You can sign up for events here: <https://docs.google.com/spreadsheets/d/1SD_4TzaABza_TVH2fumDJXsOADbCfTdYoYhMjhCzvT8/edit?gid=1678000636#gid=1678000636|MNRD Events Sign Up>",
+    "keywords": "event signup, sign up events, events signup",
+    "last updated": "4/28/2026",
     "active": "TRUE"
   }
 ]

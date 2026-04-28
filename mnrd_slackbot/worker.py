@@ -1,16 +1,27 @@
 import os
 import logging
+import time
 
 from slack_sdk import WebClient
-from slack_sdk.errors import SlackApiError
 from answer import get_answer
 
-client = WebClient(token=os.environ["SLACK_BOT_TOKEN"])
-
-logger = logging.getLogger()
+logger = logging.getLogger("worker")
 logger.setLevel(logging.INFO)
 
+def get_token(team_id):
+    if team_id == os.environ["MNRD_TEST_TEAM_ID"]:
+        return os.environ["SLACK_BOT_TOKEN_TEST"]
+    elif team_id == os.environ["MNRD_LIVE_TEAM_ID"]:
+        return os.environ["SLACK_BOT_TOKEN_LIVE"]
+    else:
+        raise Exception(f"Unknown team_id: {team_id}")
+
 def lambda_handler(event, context):
+    client = WebClient(token=get_token(event["team_id"]))
+
+    worker_start = time.time()
+    start_time = event.get("start_time", worker_start)
+
     try:
         user = event.get("user_id")
         channel_id = event.get("channel_id")
@@ -22,16 +33,25 @@ def lambda_handler(event, context):
         if not user_msg:
             return {"statusCode": 200, "body": ""}
 
-        response_text = None
-
         if event_type == "app_mention":
             user_msg = user_msg.split(">", 1)[-1].strip()
-            answer = get_answer(user_msg)
-
+            result = get_answer(user_msg)
+            answer = result.get("answer") if result else None
+            match_type = result.get("match_type") if result else "no_match"
+            score = result.get("score") if result else 0
+                        
             if not answer:
                 response_text = f"Sorry <@{user}>, I couldn't find a match for your question. If you'd like to suggest a new FAQ or share feedback, please use this form: <https://forms.gle/pw7GhduacR7n4UJeA|Chatbot Suggestion Form>"
             else:
                 response_text = f"Hi <@{user}>! {answer}"
+
+            client.chat_postMessage(
+                channel=channel_id,
+                text=response_text,
+                thread_ts=thread_ts,
+                unfurl_links=False,
+                unfurl_media=False
+            )
 
         elif event_type == "message":
 
@@ -39,25 +59,36 @@ def lambda_handler(event, context):
                 logger.info("Ignored non-DM message")
                 return {"statusCode": 200, "body": ""}
 
-            answer = get_answer(user_msg)
+            result = get_answer(user_msg)
+            answer = result.get("answer") if result else None
+            match_type = result.get("match_type") if result else "no_match"
+            score = result.get("score") if result else 0
 
             if not answer:
                 response_text = f"Sorry <@{user}>, I couldn't find a match for your question. If you'd like to suggest a new FAQ or share feedback, please use this form: <https://forms.gle/pw7GhduacR7n4UJeA|Chatbot Suggestion Form>"
             else:
                 response_text = f"Hi <@{user}>! {answer}"
+            client.chat_postMessage(
+                channel=channel_id,
+                text=response_text,
+                unfurl_links=False,
+                unfurl_media=False
+            )
 
         else:
             logger.info(f"Ignored event type: {event_type}")
             return {"statusCode": 200, "body": ""}
 
-        client.chat_postMessage(
-            channel=channel_id,
-            text=response_text,
-            thread_ts=thread_ts,
-            unfurl_links=False,
-            unfurl_media=False
-        )
-
+        logger.info({
+            "event": "response_sent",
+            "user": user,
+            "question": user_msg,
+            "match_type": match_type,
+            "score": float(score),
+            "total_response_time_ms": (time.time() - start_time) * 1000,
+            "response": response_text
+        })
+        
         return {"statusCode": 200, "body": ""}
 
     except Exception as e:
@@ -75,7 +106,7 @@ def lambda_handler(event, context):
 
 # ------------------------------------ #
 #                TEST
-# #client = WebClient... to run test
+# #client = WebClient... to run test #
 # ------------------------------------ #
 
 if __name__ == "__main__":
