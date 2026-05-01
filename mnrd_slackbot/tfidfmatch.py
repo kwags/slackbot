@@ -4,12 +4,12 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 corpus = [doc["processed_text"] for doc in DOC_LIST]
-vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(1,2), min_df=2, max_df=0.85, sublinear_tf=True)
+vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(1,2), max_df=0.85, sublinear_tf=True)
 
 tfidf_matrix = vectorizer.fit_transform(corpus)
 
 
-def get_tfidf_match(user_msg, threshold=0.24, return_score=False):   
+def get_tfidf_match(user_msg, threshold=0.22, return_score=False):   
     user_msg = normalize(user_msg)
     msg_vec = vectorizer.transform([user_msg])
     similarities = cosine_similarity(msg_vec, tfidf_matrix)[0]

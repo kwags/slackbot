@@ -15,8 +15,6 @@ def clean_bylaws(text, doc_type):
         text = re.sub(r'\b\d+(\.\d+)*\b', '', text)
         text = re.sub(r'[|:]', '', text)
         text = re.sub(r'\b[IVX]+\b', '', text)
-        subsection = re.sub(r'\b\d+(\.\d+)*\b', '', subsection)
-
     return " ".join(text.split())
 
 def load_docs():
@@ -37,7 +35,7 @@ def load_docs():
             text = doc.get("text", "")
 
             combined = f"{section} {article} {subsection} {text}"
-
+            combined = clean_bylaws(combined, doc_type)
             doc["processed_text"] = normalize(combined)
 
             doc["source_file"] = os.path.basename(file_path)

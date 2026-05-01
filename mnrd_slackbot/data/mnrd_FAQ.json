@@ -115,8 +115,8 @@
     "id": "15",
     "question": "How do I update my name or information in the roster?",
     "answer": "You can update any of your roster information by filling out the roster form located here: <https://mnrd.me/rosterupdate|mnrd.me/rosterupdate>",
-    "keywords": "update roster, edit roster, change name roster",
-    "last updated": "2/22/2026",
+    "keywords": "update roster, edit roster, change name roster, change roster, changes to the roster",
+    "last updated": "5/1/2026",
     "active": "TRUE"
   },
   {
@@ -274,9 +274,9 @@
   {
     "id": "35",
     "question": "What is the email for MNRD tech comm?",
-    "answer": "You can reach out to tech comm by sendingn an email to: techcomm@mnrollerderby.com",
+    "answer": "You can reach out to tech comm by sending an email to: techcomm@mnrollerderby.com",
     "keywords": "tech problem, technical difficulty, tech comm email, contact tech comm, email tech committee",
-    "last updated": "4/15/2026",
+    "last updated": "5/1/2026",
     "active": "TRUE"
   },
   {
@@ -571,7 +571,7 @@
     "id": "72",
     "question": "How do I join the All-Stars team?",
     "answer": "Tryouts for MNRD All-Stars typically occur around the beginning of the calendar year. Contact the director of training or All-Stars leadership for more details. <https://mnrd.me/orgchart|mnrd.me/orgchart>",
-    "keywords": "all stars tryout, travel team tryout, join all-stars, join travel team, all star tryout",
+    "keywords": "all stars tryout, travel team tryout, join all-stars, join travel team, all star tryout, try out for all-stars",
     "last updated": "4/24/2026",
     "active": "TRUE"
   },
