@@ -82,7 +82,7 @@
   {
     "id": "11",
     "question": "Where can I find the link to bout or game footage videos?",
-    "answer": "The link to bout footage for this season and prior seasons can be found here: <https://mnrd.tv/footage|mnrd.tv/footage>. A link to additional bout footage is typically posted in the #footage channel in Slack.",
+    "answer": "The link to bout footage for this season and prior seasons can be found here: <https://mnrd.tv/footage|mnrd.tv/footage>. A link to additional bout footage is typically posted in the <#CDCUBP7R6> channel in Slack.",
     "keywords": "bout footage, footage channel, footage link",
     "last updated": "2/20/2026",
     "active": "TRUE"
@@ -186,23 +186,23 @@
   {
     "id": "24",
     "question": "Where do I find people to carpool with in MNRD?",
-    "answer": "There is a channel named <#C0ALLGX0VSR> intended to support folks in creating local carpools.",
-    "keywords": "carpool, get a ride",
+    "answer": "There is a channel named <#CAAQVRPDE> intended to support folks in creating local carpools.",
+    "keywords": "carpool, get a ride, carpools",
     "last updated": "3/5/2026",
     "active": "TRUE"
   },
   {
     "id": "25",
     "question": "How can I help my league sell tickets?",
-    "answer": "There are several ways the league promotes bouts to sell tickets. Some examples include tabling at events, flyering, or inviting people to the bout day Facebook event page directly. To be connected more easily to bout promotion efforts, you can join the #buttsinseats channel on Slack.",
+    "answer": "There are several ways the league promotes bouts to sell tickets. Some examples include tabling at events, flyering, or inviting people to the bout day Facebook event page directly. To be connected more easily to bout promotion efforts, you can join the <#CS3UEAZM0> channel on Slack.",
     "keywords": "sell tickets, butts in seats",
-    "last updated": "3/5/2026",
+    "last updated": "5/5/2026",
     "active": "TRUE"
   },
   {
     "id": "26",
     "question": "Where can I sign up to volunteer at events promoting MNRD?",
-    "answer": "An events sign-up spreadsheet, where you can sign up to participate in planned events, is located here: <https://docs.google.com/spreadsheets/d/10JIz_kzZqWT1d9B9AOS2akpwxjdRsStestdwpU8NeSI/edit?gid=2139456876#gid=2139456876|Event Signup>",
+    "answer": "An events sign-up spreadsheet, where you can sign up to participate in planned events, is located here: <https://docs.google.com/spreadsheets/d/1SD_4TzaABza_TVH2fumDJXsOADbCfTdYoYhMjhCzvT8/edit?gid=1678000636#gid=1678000636|MNRD Events Sign Up>",
     "keywords": "event volunteer, promotional events",
     "last updated": "3/5/2026",
     "active": "TRUE"
@@ -394,7 +394,7 @@
   {
     "id": "50",
     "question": "What time is practice?",
-    "answer": "Practice days, times, and locations can be found in the <#C0AM2SWPNSV> channel. You can learn how to add the MNRD calendar to your own calendar here: <https://minnesotarollerderby.groups.io/g/main/wiki/3679|MNRD Calendar Wiki>",
+    "answer": "Practice days, times, and locations can be found in the <#C0H93TLA0> channel. You can learn how to add the MNRD calendar to your own calendar here: <https://minnesotarollerderby.groups.io/g/main/wiki/3679|MNRD Calendar Wiki>",
     "keywords": "practice time, when is practice",
     "last updated": "3/5/2026",
     "active": "TRUE"
@@ -402,15 +402,15 @@
   {
     "id": "51",
     "question": "Where is practice?",
-    "answer": "Practice days, times, and locations can be found in the <#C0AM2SWPNSV> channel. You can learn how to add the MNRD calendar to your own calendar here: <https://minnesotarollerderby.groups.io/g/main/wiki/3679|MNRD Calendar Wiki>",
-    "keywords": "practice location, practice located",
-    "last updated": "3/5/2026",
+    "answer": "Practice days, times, and locations can be found in the <#C0H93TLA0> channel. You can learn how to add the MNRD calendar to your own calendar here: <https://minnesotarollerderby.groups.io/g/main/wiki/3679|MNRD Calendar Wiki>",
+    "keywords": "practice location, practice located, where practice",
+    "last updated": "5/5/2026",
     "active": "TRUE"
   },
   {
     "id": "52",
     "question": "Where is the MNRD calendar?",
-    "answer": "Practice and event days, times, and locations can be found in the <#C0AM2SWPNSV> channel. You can learn how to add the MNRD league calendar to your own calendar here: <https://minnesotarollerderby.groups.io/g/main/wiki/3679|MNRD Calendar Wiki>",
+    "answer": "Practice and event days, times, and locations can be found in the <#C0H93TLA0> channel. You can learn how to add the MNRD league calendar to your own calendar here: <https://minnesotarollerderby.groups.io/g/main/wiki/3679|MNRD Calendar Wiki>",
     "keywords": "league calendar, calendar",
     "last updated": "3/6/2026",
     "active": "TRUE"
@@ -448,11 +448,11 @@
     "active": "TRUE"
   },
   {
-    "id": "57",
-    "question": "What membership class am I?",
-    "answer": "There are five different membership classes including: Skater, Administrative, Session, Volunteers, and Officials. You can read more about the membership classes here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Membership%20Policy%20%28updated23Mar2026%29.pdf|MNRD Membership and Classification Policy>",
-    "keywords": "membership class, skater class, membership classes, what class am i, what is my class, membership and classification policy, membership policy",
-    "last updated": "4/23/2026",
+    "id": "63",
+    "question": "How do I change my membership class?",
+    "answer": "Membership class can be updated using the roster update form here: <https://mnrd.me/rosterupdate|mnrd.me/rosterupdate> More information about changing class can be viewed here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Member%20Class%20Change%20Policy%20%2812.22.2021%29.pdf|MNRD Member Class Change Policy>",
+    "keywords": "change membership class, change class,",
+    "last updated": "5/5/2026",
     "active": "TRUE"
   },
   {
@@ -496,10 +496,10 @@
     "active": "TRUE"
   },
   {
-    "id": "63",
-    "question": "How do I change my membership class?",
-    "answer": "Membership class can be updated using the roster update form here: <https://mnrd.me/rosterupdate|mnrd.me/rosterupdate> More information about changing class can be viewed here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Member%20Class%20Change%20Policy%20%2812.22.2021%29.pdf|MNRD Member Class Change Policy>",
-    "keywords": "change membership class, change class, update roster, member class change policy, class change policy",
+    "id": "57",
+    "question": "What membership class am I?",
+    "answer": "There are five different membership classes including: Skater, Administrative, Session, Volunteers, and Officials. You can read more about the membership classes here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Membership%20Policy%20%28updated23Mar2026%29.pdf|MNRD Membership and Classification Policy>",
+    "keywords": "membership class, skater class, membership classes, what class am i, what is my class, membership and classification policy, membership policy",
     "last updated": "4/23/2026",
     "active": "TRUE"
   },
@@ -562,7 +562,7 @@
   {
     "id": "71",
     "question": "Where can I view practice footage?",
-    "answer": "The link to season 22 practice footage for home teams can be found here: <https://www.youtube.com/playlist?list=PLQbP7S-JLbxENGIHeXeiL9ejXz9iNmAQX|Season 22 Home Team Practices>. Links to practice footage can typically be found in the #footage channel in Slack.",
+    "answer": "The link to season 22 practice footage for home teams can be found here: <https://www.youtube.com/playlist?list=PLQbP7S-JLbxENGIHeXeiL9ejXz9iNmAQX|Season 22 Home Team Practices>. Links to practice footage can typically be found in the <#CDCUBP7R6> channel in Slack.",
     "keywords": "practice footage link, practice videos",
     "last updated": "4/24/2026",
     "active": "TRUE"
@@ -589,6 +589,14 @@
     "answer": "You can sign up for events here: <https://docs.google.com/spreadsheets/d/1SD_4TzaABza_TVH2fumDJXsOADbCfTdYoYhMjhCzvT8/edit?gid=1678000636#gid=1678000636|MNRD Events Sign Up>",
     "keywords": "event signup, sign up events, events signup",
     "last updated": "4/28/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "75",
+    "question": "How do I get reimbursed from finance?",
+    "answer": "To receive a reimbursement from a purchase, you can fill out the form here: <https://mnrd.me/reimbursement|mnrd.me/reimbursement>",
+    "keywords": "reimburse, reimbursement, reimbursed",
+    "last updated": "5/21/2026",
     "active": "TRUE"
   }
 ]
