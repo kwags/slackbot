@@ -23,7 +23,6 @@ def get_token(team_id):
     return token
 
 def lambda_handler(event, context):
-    logger.info(f"FULL EVENT: {event}")
     client = WebClient(token=get_token(event["team_id"]))
 
     worker_start = time.time()
