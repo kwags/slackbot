@@ -448,11 +448,11 @@
     "active": "TRUE"
   },
   {
-    "id": "63",
-    "question": "How do I change my membership class?",
-    "answer": "Membership class can be updated using the roster update form here: <https://mnrd.me/rosterupdate|mnrd.me/rosterupdate> More information about changing class can be viewed here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Member%20Class%20Change%20Policy%20%2812.22.2021%29.pdf|MNRD Member Class Change Policy>",
-    "keywords": "change membership class, change class,",
-    "last updated": "5/5/2026",
+    "id": "57",
+    "question": "What membership class am I?",
+    "answer": "There are five different membership classes including: Skater, Administrative, Session, Volunteers, and Officials. You can read more about the membership classes here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Membership%20Policy%20%28updated23Mar2026%29.pdf|MNRD Membership and Classification Policy>",
+    "keywords": "membership class, skater class, membership classes, what class am i, what is my class, membership and classification policy, membership policy",
+    "last updated": "4/23/2026",
     "active": "TRUE"
   },
   {
@@ -496,11 +496,11 @@
     "active": "TRUE"
   },
   {
-    "id": "57",
-    "question": "What membership class am I?",
-    "answer": "There are five different membership classes including: Skater, Administrative, Session, Volunteers, and Officials. You can read more about the membership classes here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Membership%20Policy%20%28updated23Mar2026%29.pdf|MNRD Membership and Classification Policy>",
-    "keywords": "membership class, skater class, membership classes, what class am i, what is my class, membership and classification policy, membership policy",
-    "last updated": "4/23/2026",
+    "id": "63",
+    "question": "How do I change my membership class?",
+    "answer": "Membership class can be updated using the roster update form here: <https://mnrd.me/rosterupdate|mnrd.me/rosterupdate> More information about changing class can be viewed here: <https://minnesotarollerderby.groups.io/g/main/files/Admin/Policies/Current%20Articles,%20Bylaws%20and%20Misc.%20Policies/MNRD%20Member%20Class%20Change%20Policy%20%2812.22.2021%29.pdf|MNRD Member Class Change Policy>",
+    "keywords": "change membership class, change class,",
+    "last updated": "5/5/2026",
     "active": "TRUE"
   },
   {
