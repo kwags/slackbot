@@ -8,15 +8,22 @@ from answer import get_answer
 logger = logging.getLogger("worker")
 logger.setLevel(logging.INFO)
 
+
+
 def get_token(team_id):
-    if team_id == os.environ["MNRD_TEST_TEAM_ID"]:
-        return os.environ["SLACK_BOT_TOKEN_TEST"]
+    if team_id == os.environ["MNRD_TEAM_ID"]:
+        token = os.environ["SLACK_BOT_TOKEN_MNRD"]
+    elif team_id == os.environ["MNRD_TEST_TEAM_ID"]:
+        token = os.environ["SLACK_BOT_TOKEN_TEST"]
     elif team_id == os.environ["MNRD_LIVE_TEAM_ID"]:
-        return os.environ["SLACK_BOT_TOKEN_LIVE"]
+        token = os.environ["SLACK_BOT_TOKEN_LIVE"]
     else:
         raise Exception(f"Unknown team_id: {team_id}")
+    
+    return token
 
 def lambda_handler(event, context):
+    logger.info(f"FULL EVENT: {event}")
     client = WebClient(token=get_token(event["team_id"]))
 
     worker_start = time.time()
