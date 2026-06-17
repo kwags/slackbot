@@ -35,8 +35,8 @@
     "id": "5",
     "question": "How do I find and apply for open league jobs?",
     "answer": "You can email HR@mnrollerderby.com to connect with the jobs manager to sign up for an open position. To see available positions, check the jobs spreadsheet here: <https://mnrd.me/openjobs|mnrd.me/openjobs>",
-    "keywords": "apply leauge job, open league positions, contact jobs manager, league job",
-    "last updated": "3/5/2026",
+    "keywords": "apply leauge job, open league positions, contact jobs manager, league job, open jobs",
+    "last updated": "6/11/2026",
     "active": "TRUE"
   },
   {
@@ -597,6 +597,22 @@
     "answer": "To receive a reimbursement from a purchase, you can fill out the form here: <https://mnrd.me/reimbursement|mnrd.me/reimbursement>",
     "keywords": "reimburse, reimbursement, reimbursed",
     "last updated": "5/21/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "76",
+    "question": "Where can I watch MNRD games live online?",
+    "answer": "MNRD Games can be streamed live online via MNRD's Twitch page found here: <https://www.twitch.tv/mnrollerderby|MN Roller Derby Twitch Channel>",
+    "keywords": "live stream, watch games, twitch",
+    "last updated": "6/17/2026",
+    "active": "TRUE"
+  },
+  {
+    "id": "77",
+    "question": "What are MNRD's social media pages?",
+    "answer": "MNRD has several social media accounts including <https://www.facebook.com/MNRollerDerby/|Facebook>, <https://www.instagram.com/the_mnrd/?hl=en|Instagram>, <https://www.tiktok.com/@mnrollerderby|TikTok>, and <https://bsky.app/profile/mnrollerderby.bsky.social|Bluesky>",
+    "keywords": "facebook, instagram, TikTok, bluesky, social media",
+    "last updated": "6/17/2026",
     "active": "TRUE"
   }
 ]
