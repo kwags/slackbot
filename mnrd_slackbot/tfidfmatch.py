@@ -4,7 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 corpus = [doc["processed_text"] for doc in DOC_LIST]
-vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(1,2), max_df=0.85, sublinear_tf=True)
+vectorizer = TfidfVectorizer(stop_words="english", ngram_range=(1,2), min_df=1, max_df=0.85, sublinear_tf=True)
 
 tfidf_matrix = vectorizer.fit_transform(corpus)
 
@@ -12,6 +12,13 @@ tfidf_matrix = vectorizer.fit_transform(corpus)
 def get_tfidf_match(user_msg, threshold=0.22, return_score=False):   
     user_msg = normalize(user_msg)
     msg_vec = vectorizer.transform([user_msg])
+
+    # return no match for queries that don't have at least 2 terms in the corpus
+    if msg_vec.nnz < 2:
+        if return_score:
+            return None, 0, None
+        return None
+
     similarities = cosine_similarity(msg_vec, tfidf_matrix)[0]
 
     best_index = similarities.argmax()
@@ -77,6 +84,7 @@ if __name__ == "__main__":
         "Do I lose my membership if I'm inactive?",
         "what is the definition of inactive status?",
         "What happens if someone doesn't follow the code of conduct?",
+        "who is going to win the golden skate next season?",
         "Do aliens exist?"
     ]
 
