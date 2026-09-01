@@ -26,12 +26,15 @@ The bot runs as a serverless application using **AWS Lambda** and responds to qu
 
 ## Project Structure
 
+```text
 slackbot/
 ├── mnrd_slackbot/       # Main application code
 ├── events/              # Sample/test invocation events
+├── tests/               # Unit and integration tests
 ├── template.yaml        # AWS SAM infrastructure configuration
 ├── requirements.txt     # Python dependencies
 └── README.md
+```
 
 
 ## How It Works
