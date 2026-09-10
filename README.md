@@ -1,12 +1,13 @@
 # MNRD Slackbot
 
-A Python-based Slackbot built to help members of the Minnesota Roller Derby (MNRD) community quickly find information about league policies, bylaws, leave policies, and other organizational documentation.
+A Python-based Slackbot built to help members of Minnesota Roller Derby (MNRD) quickly find answers to frequently asked questions and information about league policies, bylaws, leave policies, and other organizational documentation.
 
 The bot runs as a serverless application using **AWS Lambda** and responds to questions and requests submitted through Slack.
 
+<img width="1682" height="824" alt="botdish" src="https://github.com/user-attachments/assets/4921a558-19c0-411e-b2d0-778142e319bb" />
+
 ## Features
 
-* Searches organizational documentation to provide relevant answers to Slack users
 * Uses an FAQ system for frequently asked questions
 * Supports exact, keyword, and fuzzy matching for improved question recognition
 * Uses **TF-IDF** and cosine similarity to identify relevant sections of organizational documents when an FAQ match isn't found
@@ -43,7 +44,7 @@ When a user sends a question to the Slackbot, the application processes the mess
 
 The matching process uses several levels of matching, including:
 
-1. Exact and keyword matching
+1. Exact matching
 2. Keyword matching
 3. Fuzzy matching
 4. TF-IDF similarity matching against organizational documents
