@@ -4,7 +4,7 @@ A Python-based Slackbot built to help members of Minnesota Roller Derby (MNRD) q
 
 The bot runs as a serverless application using **AWS Lambda** and responds to questions and requests submitted through Slack.
 
-<img width="1682" height="824" alt="botdish" src="https://github.com/user-attachments/assets/4921a558-19c0-411e-b2d0-778142e319bb" />
+<img width="1000" height="490" alt="botdish-faq" src="https://github.com/user-attachments/assets/ad62ac56-fcc7-42b2-823b-c343abd8946f" />
 
 ## Features
 
