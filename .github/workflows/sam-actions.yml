@@ -1,0 +1,34 @@
+name: SAM Actions - Validate • Build
+run-name: ${{ github.actor }} is validating and building Botdish 🤖
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up AWS SAM CLI
+        uses: aws-actions/setup-sam@v2
+
+      - name: Validate SAM template
+        run: sam validate --template-file template.yaml
+
+      - name: Build SAM application
+        run: sam build --use-container
+          ls ${{ github.workspace }}
+          
+      - run: echo "🍏 This job's status is ${{ job.status }}."
