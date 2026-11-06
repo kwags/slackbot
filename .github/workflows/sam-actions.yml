@@ -27,6 +27,11 @@ jobs:
       - name: Validate SAM template
         run: sam validate --template-file template.yaml --region us-east-2
       
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+        with:
+          platforms: arm64
+
       - name: Pull ARM64 SAM build image
         run: docker pull public.ecr.aws/sam/build-python3.11:latest-arm64
 
