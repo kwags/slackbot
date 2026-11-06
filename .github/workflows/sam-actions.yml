@@ -4,7 +4,7 @@ run-name: ${{ github.actor }} is validating and building Botdish 🤖
 on:
   push:
     branches:
-      - main
+      - actions
   #pull_request:
   #  branches:
   #    - main
