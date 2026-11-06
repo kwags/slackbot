@@ -26,8 +26,12 @@ jobs:
 
       - name: Validate SAM template
         run: sam validate --template-file template.yaml --region us-east-2
+      
+      - name: Pull ARM64 SAM build image
+        run: docker pull public.ecr.aws/sam/build-python3.11:latest-arm64
 
-      #- name: Build SAM application
-      #  run: sam build --use-container
+      - name: Build SAM application
+        run: sam build --use-container
+        timeout-minutes: 5
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
